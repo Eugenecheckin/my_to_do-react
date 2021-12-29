@@ -2,18 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Wrapper} from './component.style.js'
-import {Provider} from 'react-redux'
 import { createStore } from "redux";
-import { rootReducer } from "./rootReducer";
+import { Provider } from 'react-redux';
 
+const addTodoAction = text => {
+  return {
+    type: 'add-todo',
+    payload: text
+  }
+}
+let initialState = {
+	item: []
+};
+
+function rootReducer(state = initialState, action) {
+	if (action.type==='add-todo') {
+		return {...state, item:[new Date().getUTCMilliseconds(), 'Test Item', false]}
+	}
+	return state;
+}
 
 let store = createStore(rootReducer);
-const mytodo = (
+console.log(store.getState())
+
+let testAction = addTodoAction("Test Action");
+store.dispatch(testAction);
+console.log(store.getState());
+
+/*const mytodo = (
   <Provider store={store}>
    <MyToDo />
   </Provider>
 )
-store.subscribe(() => console.log(store.getState()))
+
 
 function ToDoItem({title,id,complete}){
   return(
@@ -41,18 +62,19 @@ class MyToDo extends React.Component {
     super(props);
     this.state = { todos : [ { id:1, title:"test", complete:false } ] }
   }
-  render()
-   {return (
-    <Wrapper>
-      <header className="header">
+  render() {
+    return (
+      <Wrapper>
+        <header className="header">
 		    <h1>todos</h1>
 		    <input className="new-todo" placeholder="What needs to be done?" autoFocus></input>
-	    </header>
-    <ToDoList todos={this.state.todos}/>
-    </Wrapper> );}  
+	      </header>    
+      </Wrapper> 
+    );
+  }  
 }
 
 ReactDOM.render(
   mytodo,
   document.getElementById('root')
-);
+);*/
