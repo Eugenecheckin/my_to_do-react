@@ -1,12 +1,12 @@
-import './App.css';
-import {Wrapper} from './Component.style.js'
+import './styles/App.css';
+import {Wrapper} from './styles/Component.style.js'
 
 import React from 'react';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
 
-import rootReducer from './Reducer'
-import addTodoAction from './Action';
+import rootReducer from './store/Reducer'
+import addTodoAction from './store/Action';
 
 export let store = createStore(rootReducer);
 console.log(store.getState())
