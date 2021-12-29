@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './Reducer'
 import addTodoAction from './Action';
 
-let store = createStore(rootReducer);
+export let store = createStore(rootReducer);
 console.log(store.getState())
 let testAction = addTodoAction("Test Action");
 store.dispatch(testAction);
@@ -18,8 +18,7 @@ console.log(store.getState());
 /*const mytodo = (
   <Provider store={store}>
    <MyToDo />
-  </Provider>
-)
+  </Provider>*/
 
 
 function ToDoItem({title,id,complete}){
@@ -42,18 +41,28 @@ function ToDoList({todos}){
     </ul>    
   );
 }
-*/
+
 class ToDo extends React.Component {
   constructor(props){
     super(props);
-    this.state = { todos : [ { id:1, title:"test", complete:false } ] }
+    this.state = { 
+			todos : [ { 
+				          id:1, 
+									title:"test", 
+									complete:false 
+								} 
+							] 
+						}
   }
-  render() {
+  render(props) {
     return (
       <Wrapper>
-        <header className="header">
+        <header className="header">				
 		    <h1>todos</h1>
-		    <input className="new-todo" placeholder="What needs to be done?" autoFocus></input>
+		    <input className="new-todo" 
+				       placeholder="What needs to be done?" 
+							 autoFocus>
+				</input>
 	      </header>  
       </Wrapper> 
     );
@@ -65,7 +74,7 @@ class ToDo extends React.Component {
 function App() {
   return (
     <div className="App">
-      <ToDo/>
+		  <ToDo/>   
     </div>
   );
 }
