@@ -11,7 +11,7 @@ function App() {
         <Postform/>
       </div>
       <div className='todo-tasks'>
-        <Tasks/>
+        <Tasks tasks={[{title:'first'},{title: 'second'},{title: 'third'}]}/>
       </div>
     </div>    
   );

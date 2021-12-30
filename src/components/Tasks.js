@@ -1,9 +1,8 @@
 import React from "react";
+import Task from "./Task";
 
-export default () => {
-	return (
-		<div>
-			<h1>tasks</h1>
-		</div>
+export default function Tasks ({tasks}) {
+	return ( 
+		tasks.map(task => <Task task={task}/>)
 	);
 }
