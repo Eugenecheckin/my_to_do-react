@@ -7,8 +7,9 @@ import { Checkbox } from '@mui/material';
 	return (
 		<div className = "todo-item">
 			<Checkbox />
-			<ListItem 
-			  className = "text-item">{ task.title }
+
+			<ListItem className = "text-item">
+				{ task.title }
 			</ListItem>
 		</div>		
 	);
