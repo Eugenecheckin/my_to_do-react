@@ -4,7 +4,14 @@ let initialState = {
 
 const rootReducer = (state = initialState, action) => {
 	if (action.type==='add-todo') {
-		return {...state, item:[new Date().getUTCMilliseconds(), action.payload, false]}
+		return {
+			       ...state, 
+			       item:[
+							      new Date().getUTCMilliseconds(),
+										action.payload,
+										false
+									]
+					 }
 	}
 	return state;
 }
