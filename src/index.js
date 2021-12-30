@@ -1,17 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css'
+import {render} from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from './store/Constant'
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  ,
+render (
+  <App/>,
   document.getElementById('root')
 );
 reportWebVitals();
