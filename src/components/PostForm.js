@@ -1,20 +1,39 @@
-import { FormControl, Input, InputLabel } from '@mui/material';
+import { Button, FormGroup, Input, InputLabel } from '@mui/material';
 import React from 'react';
 
-class Postform extends React.Component{
-	constructor(props){
+class Postform extends React.Component {
+	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			title: ''
+		};
+	}
+	ChangeInputHandler = (event) => { 
+		event.preventDefault();
+		event.persist();
+		this.setState(prev => (
+				{...prev, ...{[event.target.name] : [event.target.value]}}
+			)
+		);
 	}
 	render() {
-		return(
+		return (
 			<div>
 				<h1>todos</h1>
-				<FormControl>			
-  				<InputLabel htmlFor="my-input">What needs to be done?</InputLabel>
-  				<Input id="my-input" aria-describedby="my-helper-text" />
-				</FormControl>
-				</div>		
+				<FormGroup >			
+  				<InputLabel htmlFor="input-task__label">What needs to be done?</InputLabel>
+  				<Input 
+					  aria-describedby = "input-task__helper"
+						className = 'input-task'
+						type='text'
+					  id = 'title'
+						value = {this.state.title}						
+						name = 'title'
+						onChange={this.ChangeInputHandler} 							
+					/>
+					<Button className='input-task__btn'>Добавить</Button>
+				</FormGroup>
+			</div>		
 		);
 	}
 }

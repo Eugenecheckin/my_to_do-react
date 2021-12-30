@@ -6,7 +6,7 @@ export default function Task ({task}) {
 	return (
 		<div className="todo-item">
 			<Checkbox />
-			<ListItem className="text-item">Task.title</ListItem>
+			<ListItem className="text-item">{task.title}</ListItem>
 		</div>		
 	);
 }

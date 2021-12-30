@@ -7,11 +7,16 @@ import Tasks from './components/Tasks.js';
 function App() {
   return (
     <div className='app'>
-      <div className="input-form">      
+      <div className="input-task">      
         <Postform/>
       </div>
       <div className='todo-tasks'>
-        <Tasks tasks={[{title:'first'},{title: 'second'},{title: 'third'}]}/>
+        <Tasks tasks = {
+          [ { id : 1, title : 'first' },
+            { id : 2, title : 'second' },
+            { id : 3, title : 'third' }
+          ]
+          }/>
       </div>
     </div>    
   );
