@@ -1,8 +1,6 @@
 import './styles/App.css';
 import {Wrapper} from './styles/Component.style.js'
 import React from 'react';
-import { Provider } from 'react-redux';
-import {store} from './store/Constant'
 
 /*function ToDoItem({title,id,complete}){
   return(
@@ -26,7 +24,6 @@ function ToDoList({todos}){
 }
 */
 
-
 function ToDo()  {
     return (
       <Wrapper>
@@ -40,13 +37,10 @@ function ToDo()  {
       </Wrapper> 
     );  
 }
-
 function App() {
   return (
     <div className="App">
-		  <Provider store={store}>
-		    <ToDo/>  
-		  </Provider>		   
+		    <ToDo/>   
     </div>
   );
 }
