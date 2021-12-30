@@ -11,6 +11,7 @@ class Postform extends React.Component {
 	SubmitHendler = (event) => {
 		event.preventDefault();
 		console.log(this.state.title);
+		this.setState({title: ""});
 	}
 	ChangeInputHandler = (event) => { 		
 		event.persist();
