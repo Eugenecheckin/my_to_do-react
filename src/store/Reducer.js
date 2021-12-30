@@ -1,18 +1,14 @@
-let initialState = {
-	item: []
+const initialState = {
+	tasks: []
 };
 
 const rootReducer = (state = initialState, action) => {
-	if (action.type==='add-todo') {
-		return {
-			       ...state, 
-			       item:[
-							      new Date().getUTCMilliseconds(),
-										action.payload,
-										false
-									]
-					 }
+	switch (action.type) {
+		case 'add-todo' : return {
+			                         ...state, 
+			                         tasks:[...state.tasks, action.payload ]
+													   }	
+	  default : return state;
 	}
-	return state;
 }
 export default rootReducer;

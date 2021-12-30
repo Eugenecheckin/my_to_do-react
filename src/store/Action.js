@@ -1,7 +1,7 @@
-const addTodoAction = text => {
+const addTodoAction = todosItem => {
   return {
     type: 'add-todo',
-    payload: text
+    payload: todosItem
   }
 }
 export default addTodoAction;

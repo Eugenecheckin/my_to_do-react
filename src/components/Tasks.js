@@ -1,13 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import Task from "./Task";
 
-export default function Tasks ({ tasks }) {
+const Tasks = ({ addedTasks }) => {
 	return ( 
-		tasks.map(task => 
+		addedTasks.map(task => 
 		  <Task 
-			  task = { task } 
+			  task = { task.title } 
 			  key = { task.id }
 			/>
 		)
 	);
 }
+const mapStateToProps = state => {
+	return {
+		addedTasks : state.tasks
+	}
+}
+export default connect(mapStateToProps,null)(Tasks);

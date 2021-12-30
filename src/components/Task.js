@@ -1,8 +1,9 @@
 import React from "react";
+
 import { ListItem } from '@mui/material';
 import { Checkbox } from '@mui/material';
 
-export default function Task ({ task }) {
+ const Task = ({ task }) => {
 	return (
 		<div className = "todo-item">
 			<Checkbox />
@@ -12,3 +13,4 @@ export default function Task ({ task }) {
 		</div>		
 	);
 }
+export default Task;

@@ -1,5 +1,9 @@
-import { Button, Input, InputLabel } from '@mui/material';
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { Button, Input, InputLabel } from '@mui/material';
+
+import addTodoAction from '../store/Action'
 
 class Postform extends React.Component {
 	constructor(props) {
@@ -10,7 +14,13 @@ class Postform extends React.Component {
 	}
 	SubmitHendler = (event) => {
 		event.preventDefault();
-		console.log(this.state.title);
+		const title = this.state;		
+		const payload = {
+			title,
+			id: new Date().getMilliseconds(),
+			checked : false
+		};
+		this.props.addTodoAction(payload);
 		this.setState({title: ""});
 	}
 	ChangeInputHandler = (event) => { 		
@@ -30,6 +40,7 @@ class Postform extends React.Component {
   				<InputLabel 
 					  htmlFor = "input-task__label">What needs to be done?
 					</InputLabel>
+
   				<Input 
 					  aria-describedby = "input-task__helper"
 						className = "input-task"
@@ -39,14 +50,19 @@ class Postform extends React.Component {
 						name = "title"
 						onChange = { this.ChangeInputHandler } 							
 					/>
+
 					<Button 
 					  className = "input-task__btn" 
-						type = "submit" >Добавить
+						type = "submit"
+					>
+				  	Добавить
 					</Button>
 				</form>
 			</div>		
 		);
 	}
 }
-export default Postform;
-
+const mapDispatchToProps = {
+	addTodoAction
+}
+export default connect(null,mapDispatchToProps)(Postform);
