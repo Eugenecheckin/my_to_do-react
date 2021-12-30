@@ -1,4 +1,4 @@
-import { Button, FormGroup, Input, InputLabel } from '@mui/material';
+import { Button, Input, InputLabel } from '@mui/material';
 import React from 'react';
 
 class Postform extends React.Component {
@@ -23,7 +23,7 @@ class Postform extends React.Component {
 		return (
 			<div>
 				<h1>todos</h1>
-				<FormGroup onSubmit={this.SubmitHendler}>			
+				<form onSubmit={this.SubmitHendler}>			
   				<InputLabel htmlFor="input-task__label">What needs to be done?</InputLabel>
   				<Input 
 					  aria-describedby = "input-task__helper"
@@ -34,8 +34,8 @@ class Postform extends React.Component {
 						name = "title"
 						onChange = {this.ChangeInputHandler} 							
 					/>
-					<Button className="input-task__btn" type="submit">Добавить</Button>
-				</FormGroup>
+					<Button className="input-task__btn" type="submit" >Добавить</Button>
+				</form>
 			</div>		
 		);
 	}
