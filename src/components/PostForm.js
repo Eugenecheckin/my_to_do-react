@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Input } from '@mui/material';
+import { Input, Typography  } from '@mui/material';
 
 import addTodoAction from '../store/Action'
 
@@ -40,7 +40,9 @@ class Postform extends React.Component {
 	render() {
 		return (
 			<div>
-				  <h1>todos</h1>		
+			    <Typography variant='h1'>
+				    todos
+					</Typography>		
   				<Input 
 					  aria-describedby = "input-task__helper"
 						className = "input-task"
