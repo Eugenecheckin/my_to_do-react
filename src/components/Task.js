@@ -5,6 +5,7 @@ import { Button, Checkbox, ListItem } from '@mui/material';
 import {ContentContainer} from '../styles/Component.style.js'
 	
 function Task({ task }) {
+	console.log(task);
 	const selector = useSelector(state => 
 		                             state.tasks.find( element => 
 																	 {
