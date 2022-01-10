@@ -6,7 +6,7 @@ import {ContentContainer} from '../styles/Component.style.js'
 	
 function Task({ task }) {
 	const selector = useSelector(state => 
-		                             state.tasks.find(element => 
+		                             state.tasks.find( element => 
 																	 {
 																		 if ( element.id === task.id ) {
 																			 return true; 

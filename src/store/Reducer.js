@@ -18,7 +18,14 @@ const rootReducer = (state = initialState, action) => {
 																						                            }
 																						                  )
 																				  ]
-		                             }			
+		                             }	
+		case 'set-allChecked' :  return {
+			                              tasks:[ ...state.tasks.map( (item, i, arr) => {
+																																						return {...item, checked: !arr[0].checked }																																					
+																						                            }
+																						                  )
+																				  ]
+		                             }														 		
 												 					
 		case 'del-checked' :  return {
 			                              tasks:[ ...state.tasks.filter( item => item.id !== action.payload.id ) ]

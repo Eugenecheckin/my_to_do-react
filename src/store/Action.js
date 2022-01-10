@@ -5,3 +5,9 @@ const addTodoAction = todosItem => {
   }
 }
 export default addTodoAction;
+
+export const setAllChecked = () => {
+  return {
+    type: 'set-allChecked'
+  }
+}

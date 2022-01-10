@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Input, Typography  } from '@mui/material';
+import { Input, Typography, Checkbox  } from '@mui/material';
 
-import addTodoAction from '../store/Action'
+import addTodoAction, {setAllChecked} from '../store/Action'
 
 class Postform extends React.Component {
 	constructor(props) {
@@ -11,6 +11,10 @@ class Postform extends React.Component {
 		this.state = {
 			title: ''
 		};
+	}
+	ClickAllCheckbox = (event) => {
+		this.props.setAllChecked();
+		this.setState(this.state);
 	}
 	ChangeInputHandler = (event) => { 		
 		event.persist();
@@ -42,7 +46,10 @@ class Postform extends React.Component {
 			<div>
 			    <Typography variant='h1'>
 				    todos
-					</Typography>		
+					</Typography>
+					<Checkbox
+					  onChange= { this.ClickAllCheckbox }	
+					/>		
   				<Input 
 					  aria-describedby = "input-task__helper"
 						className = "input-task"
@@ -59,6 +66,7 @@ class Postform extends React.Component {
 	}
 }
 const mapDispatchToProps = {
-	addTodoAction
+	addTodoAction,
+  setAllChecked
 }
 export default connect(null,mapDispatchToProps)(Postform);
