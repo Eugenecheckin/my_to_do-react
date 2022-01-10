@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import Postform from './components/PostForm';
 import Tasks from './components/Tasks.js';
 
-import {Wrapper} from './styles/Component.style.js'
+import { Wrapper } from './styles/Component.style.js'
 import { useDispatch } from 'react-redux';
 
 const App = () => {
@@ -59,7 +59,7 @@ const App = () => {
         </Button>         
       </div>
       </Wrapper>
-    </div>    
+    </div>  
   );
 }
 
