@@ -1,17 +1,56 @@
 import React from "react";
+import {useSelector, useDispatch } from 'react-redux';
 
-import { ListItem } from '@mui/material';
-import { Checkbox } from '@mui/material';
-
- const Task = ({ task }) => {
+import { Button, Checkbox, ListItem } from '@mui/material';
+import {ContentContainer} from '../styles/Component.style.js'
+	
+function Task({ task }) {
+	const selector = useSelector(state => 
+		                             state.tasks.find(element => 
+																	 {
+																		 if ( element.id === task.id ) {
+																			 return true; 
+																	   }
+																	 }
+																 )
+															);
+	const dispatch = useDispatch();	
 	return (
 		<div className = "todo-item">
-			<Checkbox />
+		  <ContentContainer>
+			  <Checkbox
+					onChange= { () => { dispatch( {
+						                               type: 'set-checked',
+																					 payload: { 
+																						          id : selector.id,
+																											checked : selector.checked
+																					          }																						  
+					                              }
+					                            ) 
+					                  } 
+					 					}
+				/>
+			  <ListItem className = "text-item">
+				  { selector.title }
+			  </ListItem>
+				<Button 
+				 onClick= { () => { dispatch( {
+						                               type: 'del-checked',
+																					 payload: { 
+																						          id : selector.id
+																					          }																						  
+					                              }
+					                            ) 
+					                  } 
+				          }				 
+				>
 
-			<ListItem className = "text-item">
-				{ task.title }
-			</ListItem>
+				  &times;
+
+				</Button>
+			</ContentContainer>
 		</div>		
 	);
 }
-export default Task;
+
+export default (Task);

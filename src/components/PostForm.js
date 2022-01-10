@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Button, Input, InputLabel } from '@mui/material';
+import { Input } from '@mui/material';
 
 import addTodoAction from '../store/Action'
 
@@ -12,17 +12,6 @@ class Postform extends React.Component {
 			title: ''
 		};
 	}
-	SubmitHendler = (event) => {
-		event.preventDefault();
-		const title = this.state;		
-		const payload = {
-			title,
-			id: new Date().getMilliseconds(),
-			checked : false
-		};
-		this.props.addTodoAction(payload);
-		this.setState({title: ""});
-	}
 	ChangeInputHandler = (event) => { 		
 		event.persist();
 		this.setState(prev => (
@@ -32,32 +21,37 @@ class Postform extends React.Component {
 			)
 		);
 	}
+	KeyInputHandler = (event) =>{
+		if ( event.keyCode === 13 ) {
+			event.preventDefault();
+		  const title = this.state.title;		
+		  const payload = {
+			  title,
+			  id: new Date().getMilliseconds(),
+			  checked : false
+		  };
+		  this.props.addTodoAction(payload);
+		  this.setState({title: ""});
+	  }
+	  if ( event.keyCode === 27 ) {
+			this.setState({title: ""});
+		}		
+	}
 	render() {
 		return (
 			<div>
-				<h1>todos</h1>
-				<form onSubmit = { this.SubmitHendler }>			
-  				<InputLabel 
-					  htmlFor = "input-task__label">What needs to be done?
-					</InputLabel>
-
+				  <h1>todos</h1>		
   				<Input 
 					  aria-describedby = "input-task__helper"
 						className = "input-task"
+						placeholder='What needs to be done?'
 						type = "text"
 					  id = 'title'
 						value = { this.state.title }						
 						name = "title"
-						onChange = { this.ChangeInputHandler } 							
+						onChange = { this.ChangeInputHandler } 
+						onKeyDown={ this.KeyInputHandler }							
 					/>
-
-					<Button 
-					  className = "input-task__btn" 
-						type = "submit"
-					>
-				  	Добавить
-					</Button>
-				</form>
 			</div>		
 		);
 	}
