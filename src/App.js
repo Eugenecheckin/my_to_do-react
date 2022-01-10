@@ -13,10 +13,9 @@ const App = () => {
         <Postform />
       </div>
       <div className = "todo-tasks">        
-        <Tasks />
-                
+        <Tasks />                
       </div>
-      </Wrapper>
+    </Wrapper>
     </div>  
   );
 }

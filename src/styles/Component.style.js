@@ -13,5 +13,3 @@ export const ContentContainer = styled.section`
   justify-content: space-between;
   align-items: center;
 `;
-  
-
