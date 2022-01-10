@@ -5,7 +5,7 @@ import { Button, Checkbox, ListItem } from '@mui/material';
 import {ContentContainer} from '../styles/Component.style.js'
 	
 function Task({ task }) {
-	console.log(task);
+	console.log(task);	
 	const selector = useSelector(state => 
 		                             state.tasks.find( element => 
 																	 {
@@ -15,39 +15,40 @@ function Task({ task }) {
 																	 }
 																 )
 															);
-	const dispatch = useDispatch();	
+	const dispatch = useDispatch();
+
+	const CheckBoxClickEvHandler = () => {
+		dispatch( {
+			type: 'set-checked',
+			payload: { 
+								 id : selector.id,
+								 checked : selector.checked
+							 }																						  
+	    }
+    ) 
+	}
+	const ButtonClickEvHandler = () => {
+		dispatch( {
+			type: 'del-checked',
+			payload: { 
+								 id : selector.id
+							 }																						  
+	    }
+    ) 
+	}
 	return (
 		<div className = "todo-item">
 		  <ContentContainer>
 			  <Checkbox
-					onChange= { () => { dispatch( {
-						                               type: 'set-checked',
-																					 payload: { 
-																						          id : selector.id,
-																											checked : selector.checked
-																					          }																						  
-					                              }
-					                            ) 
-					                  } 
-					 					}
+					onChange= { CheckBoxClickEvHandler() }
 				/>
 			  <ListItem className = "text-item">
 				  { selector.title }
 			  </ListItem>
 				<Button 
-				 onClick= { () => { dispatch( {
-						                               type: 'del-checked',
-																					 payload: { 
-																						          id : selector.id
-																					          }																						  
-					                              }
-					                            ) 
-					                  } 
-				          }				 
+				 onClick= { ButtonClickEvHandler() }
 				>
-
-				  &times;
-
+				 &times;
 				</Button>
 			</ContentContainer>
 		</div>		
