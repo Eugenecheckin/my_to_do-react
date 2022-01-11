@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Checkbox, ListItem } from '@mui/material';
+import { Button, Checkbox } from '@mui/material';
 import { ContentContainer } from '../styles/Component.style';
 
 function Task({ task }) {
@@ -36,9 +36,9 @@ function Task({ task }) {
           checked={selector.checked}
           onChange={CheckBoxClickEvHandler}
         />
-        <ListItem className="text-item">
+        <label className="text-item">
           {selector.title}
-        </ListItem>
+        </label>
         <Button
           onClick={ButtonClickEvHandler}
         >
