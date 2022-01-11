@@ -30,7 +30,7 @@ const rootReducer = (state = initialState, action) => {
     };
     case 'del-checked': return {
       tasks: [
-        ...state.tasks.filter(item => item.id !== action.payload.id)
+        ...state.tasks.filter(item => item.id !== action.payload.id),
       ],
     };
     default: return state;

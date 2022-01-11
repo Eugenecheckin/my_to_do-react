@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button, Checkbox, ListItem } from '@mui/material';
 import { ContentContainer } from '../styles/Component.style';
 
-function Task({ task }) {
-  const selector = useSelector(state => state.tasks.find(element => {
+function Task({ task }) {  
+  const selector = useSelector(state => state.tasks.find(element => {    
     if (element.id === task.id) {
       return true;
     }

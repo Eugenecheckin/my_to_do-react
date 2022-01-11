@@ -9,16 +9,17 @@ function Tasks({ posts }) {
   return (
     <>
       {posts.filter(post => {
+        console.log(post);
         if (count === 'all') {
           return true;
         }
         if (count === 'active') {
-          if (post.complited === false) {
+          if (post.checked === false) {
             return true;
           }
         }
         if (count === 'completed') {
-          if (post.complited === true) {
+          if (post.checked === true) {
             return true;
           }
         }
@@ -29,19 +30,19 @@ function Tasks({ posts }) {
         />)}
       <button
         type="button"
-        onClick={() => setCount({ count: 'all' })}
+        onClick={() => setCount('all')}
       >
         All
       </button>
       <button
         type="button"
-        onClick={() => setCount({ count: 'active' })}
+        onClick={() => setCount('active')}
       >
         Active
       </button>
       <button
         type="button"
-        onClick={() => setCount({ count: 'completed' })}
+        onClick={() => setCount('completed')}
       >
         Completed
       </button>
