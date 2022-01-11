@@ -1,7 +1,7 @@
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import { logger } from 'redux-logger'
+import { logger } from 'redux-logger';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -14,9 +14,9 @@ const app = (
   </Provider>
 );
 
-render (
+render(
   app,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 reportWebVitals();

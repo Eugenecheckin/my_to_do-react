@@ -1,13 +1,13 @@
-const addTodoAction = todosItem => {
+function addTodoAction(todosItem) {
   return {
     type: 'add-todo',
-    payload: todosItem
-  }
+    payload: todosItem,
+  };
 }
 export default addTodoAction;
 
-export const setAllChecked = () => {
+export function setAllChecked() {
   return {
-    type: 'set-allChecked'
-  }
+    type: 'set-allChecked',
+  };
 }
