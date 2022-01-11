@@ -2,7 +2,7 @@ const initialState = {
   tasks: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const rootReducer = (action, state = initialState) => {
   switch (action.type) {
     case 'add-todo': return {
       tasks: [

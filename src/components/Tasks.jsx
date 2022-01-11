@@ -29,18 +29,18 @@ function Tasks({ posts }) {
         />)}
       <button
         type="button"
-        onClick={() => setCount({count: 'all'})}
+        onClick={() => setCount({ count: 'all' })}
       >
         All
       </button>
       <button
-        type="button" 
-        onClick={() => setCount({count: 'active'})}
+        type="button"
+        onClick={() => setCount({ count: 'active' })}
       >
         Active
       </button>
       <button
-        type="button" 
+        type="button"
         onClick={() => setCount({ count: 'completed' })}
       >
         Completed

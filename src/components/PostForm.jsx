@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -14,8 +15,8 @@ class Postform extends React.Component {
   }
 
   ClickAllCheckbox = () => {
-    this.props.setAllChecked();
-    this.setState(this.state);
+    const { allChecked } = this.props;
+    allChecked();
   };
 
   ChangeInputHandler = (event) => {
@@ -37,7 +38,8 @@ class Postform extends React.Component {
         id: new Date().getMilliseconds(),
         checked: false,
       };
-      this.props.addTodoAction(payload);
+      const { addTodo } = this.props;
+      addTodo(payload);
       this.setState({ title: '' });
     }
     if (event.keyCode === 27) {
@@ -46,6 +48,7 @@ class Postform extends React.Component {
   };
 
   render() {
+    const { title } = this.state;
     return (
       <div>
         <Typography variant="h1">
@@ -56,11 +59,11 @@ class Postform extends React.Component {
         />
         <Input
           aria-describedby="input-task__helper"
-          className = "input-task"
+          className="input-task"
           placeholder="What needs to be done?"
           type="text"
           id="title"
-          value={this.state.title}
+          value={title}
           name="title"
           onChange={this.ChangeInputHandler}
           onKeyDown={this.KeyInputHandler}
@@ -69,5 +72,5 @@ class Postform extends React.Component {
     );
   }
 }
-const mapDispatchToProps = { addTodoAction, setAllChecked };
+const mapDispatchToProps = { addTodo: addTodoAction, allChecked: setAllChecked };
 export default connect(null, mapDispatchToProps)(Postform);
