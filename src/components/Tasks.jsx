@@ -9,7 +9,6 @@ function Tasks({ posts }) {
   return (
     <>
       {posts.filter(post => {
-        console.log(post);
         if (count === 'all') {
           return true;
         }
