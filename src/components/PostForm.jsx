@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Input, Typography, Checkbox } from '@mui/material';
+import { Typography } from '@mui/material';
 
 import addTodoAction, { setAllChecked } from '../store/Action';
 
@@ -65,11 +65,12 @@ class Postform extends React.Component {
         <Typography variant="h1">
           todos
         </Typography>
-        <Checkbox
+        <input
+          type="checkbox"
           checked={this.CheckAll()}
           onChange={this.ClickAllCheckbox}
         />
-        <Input
+        <input
           aria-describedby="input-task__helper"
           className="input-task"
           placeholder="What needs to be done?"
