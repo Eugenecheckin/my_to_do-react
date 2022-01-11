@@ -16,7 +16,8 @@ class Postform extends React.Component {
 
   ClickAllCheckbox = () => {
     const { allChecked } = this.props;
-    allChecked();
+    const payload = this.CheckAll();
+    allChecked(payload);
   };
 
   ChangeInputHandler = (event) => {
@@ -52,11 +53,10 @@ class Postform extends React.Component {
     if (posts.length === 0) {
       return false;
     }
-    if (posts.find(item=>item.checked===false)===undefined) {
+    if (posts.find(item => item.checked === false) === undefined) {
       return true;
-    } else { return false; }
-
-  }
+    } return false;
+  };
 
   render() {
     const { title } = this.state;

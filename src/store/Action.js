@@ -6,8 +6,9 @@ function addTodoAction(todosItem) {
 }
 export default addTodoAction;
 
-export function setAllChecked() {
+export function setAllChecked(checked) {
   return {
     type: 'set-allChecked',
+    payload: checked,
   };
 }

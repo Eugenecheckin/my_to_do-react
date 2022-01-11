@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
       tasks: [...state.tasks.map((item, i, arr) => {
         return {
           ...item, 
-          checked: !arr[0].checked,
+          checked: !action.payload,
         };
       }),
       ],
