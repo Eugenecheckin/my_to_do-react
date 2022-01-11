@@ -33,6 +33,13 @@ const rootReducer = (state = initialState, action) => {
         ...state.tasks.filter(item => item.id !== action.payload.id),
       ],
     };
+    case 'del-Allchecked': console.log(action.payload.id); return {
+      tasks: [
+        ...state.tasks.filter(item => {
+          if (action.payload.id.findIndex(element => element === item.id) === -1) return true;
+        }),
+      ],
+    };
     default: return state;
   }
 };

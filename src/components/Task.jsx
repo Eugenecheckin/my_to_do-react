@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Checkbox } from '@mui/material';
 import { ContentContainer } from '../styles/Component.style';
 
 function Task({ task }) {
@@ -32,18 +31,18 @@ function Task({ task }) {
   return (
     <div className="todo-item">
       <ContentContainer>
-        <Checkbox
+        <input
+          type="checkbox"
           checked={selector.checked}
           onChange={CheckBoxClickEvHandler}
         />
         <label className="text-item">
           {selector.title}
         </label>
-        <Button
+        <input
+          type="button"
           onClick={ButtonClickEvHandler}
-        >
-          &times;
-        </Button>
+        />
       </ContentContainer>
     </div>
   );

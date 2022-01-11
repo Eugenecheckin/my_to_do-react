@@ -1,11 +1,25 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 
 import Task from './Task';
 
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
+  const selector = useSelector(state => state.tasks.filter(element => element.checked));
+  const dispatch = useDispatch();
+  const ButtonClickEvHandler = () => {
+    if (selector.length === 0) {
+      return;
+    }
+    dispatch({
+      type: 'del-Allchecked',
+      payload: {
+        id: selector.map(item => item.id),
+      },
+    });
+  };
   return (
     <>
       {posts.filter(post => {
@@ -44,6 +58,12 @@ function Tasks({ posts }) {
         onClick={() => setCount('completed')}
       >
         Completed
+      </button>
+      <button
+        type="button"
+        onClick={ButtonClickEvHandler}
+      >
+        Clear completed
       </button>
     </>
   );
