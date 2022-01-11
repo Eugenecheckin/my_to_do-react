@@ -2,7 +2,7 @@ const initialState = {
   tasks: [],
 };
 
-const rootReducer = (action, state = initialState) => {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'add-todo': return {
       tasks: [
@@ -28,9 +28,9 @@ const rootReducer = (action, state = initialState) => {
       }),
       ],
     };
-    case 'del-checked':  return {
+    case 'del-checked': return {
       tasks: [
-        ...state.tasks.filter( item => item.id !== action.payload.id ) 
+        ...state.tasks.filter(item => item.id !== action.payload.id)
       ],
     };
     default: return state;
