@@ -32,7 +32,6 @@ function Task({ task }) {
   return (
     <div className="todo-item">
       <ContentContainer>
-        {console.log(selector.checked)}
         <Checkbox
           checked={selector.checked}
           onChange={CheckBoxClickEvHandler}

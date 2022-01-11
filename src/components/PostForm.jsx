@@ -47,6 +47,17 @@ class Postform extends React.Component {
     }
   };
 
+  CheckAll = () => {
+    const { posts } = this.props;
+    if (posts.length === 0) {
+      return false;
+    }
+    if (posts.find(item=>item.checked===false)===undefined) {
+      return true;
+    } else { return false; }
+
+  }
+
   render() {
     const { title } = this.state;
     return (
@@ -55,6 +66,7 @@ class Postform extends React.Component {
           todos
         </Typography>
         <Checkbox
+          checked={this.CheckAll()}
           onChange={this.ClickAllCheckbox}
         />
         <Input
@@ -73,4 +85,7 @@ class Postform extends React.Component {
   }
 }
 const mapDispatchToProps = { addTodo: addTodoAction, allChecked: setAllChecked };
-export default connect(null, mapDispatchToProps)(Postform);
+function mapStateToProps(state) {
+  return { posts: state.tasks };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Postform);
