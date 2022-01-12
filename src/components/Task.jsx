@@ -28,6 +28,9 @@ function Task({ task }) {
       },
     });
   };
+  const PostEdit = () =>{
+    
+  }
   return (
     <div className="todo-item">
       <ContentContainer>
@@ -36,7 +39,10 @@ function Task({ task }) {
           checked={selector.checked}
           onChange={CheckBoxClickEvHandler}
         />
-        <label className="text-item">
+        <label 
+          className="text-item"
+          onDoubleClick={PostEdit}
+        >
           {selector.title}
         </label>
         <input
@@ -44,6 +50,8 @@ function Task({ task }) {
           onClick={ButtonClickEvHandler}
         />
       </ContentContainer>
+      <input
+      />
     </div>
   );
 }

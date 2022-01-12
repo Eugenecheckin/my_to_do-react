@@ -34,8 +34,15 @@ class Postform extends React.Component {
     if (event.keyCode === 13) {
       event.preventDefault();
       const { title } = this.state;
+      if (title.length === 0) {
+        return;
+      }
+      if (title[0].trim() === '') {
+        return;
+      }
+      const trimedTitle = title[0].trim()
       const payload = {
-        title,
+        title: trimedTitle,
         id: new Date().getMilliseconds(),
         checked: false,
       };
