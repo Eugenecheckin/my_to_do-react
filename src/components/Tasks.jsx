@@ -20,6 +20,13 @@ function Tasks({ posts }) {
       },
     });
   };
+  const itemLeft = () => {
+    return posts.filter(post => { 
+      if (post.checked === false) { 
+        return true; 
+      } 
+    }).length;
+  }
   return (
     <>
       {posts.filter(post => {
@@ -42,7 +49,7 @@ function Tasks({ posts }) {
           key = { item.id }
         />)}
       <label>
-        count item
+        item left: {' ' + itemLeft() }
       </label>  
       <button
         type="button"
