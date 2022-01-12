@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ContentContainer } from '../styles/Component.style';
 
@@ -10,6 +10,8 @@ function Task({ task }) {
     }
   }));
   const dispatch = useDispatch();
+
+  const [edit, setCount] = useState(false);
 
   const CheckBoxClickEvHandler = () => {
     dispatch({
@@ -28,9 +30,6 @@ function Task({ task }) {
       },
     });
   };
-  const PostEdit = () =>{
-    
-  }
   return (
     <div className="todo-item">
       <ContentContainer>
@@ -41,7 +40,7 @@ function Task({ task }) {
         />
         <label 
           className="text-item"
-          onDoubleClick={PostEdit}
+          onDoubleClick={() => setCount(true)}
         >
           {selector.title}
         </label>
@@ -50,8 +49,7 @@ function Task({ task }) {
           onClick={ButtonClickEvHandler}
         />
       </ContentContainer>
-      <input
-      />
+      { edit && <input />}
     </div>
   );
 }
