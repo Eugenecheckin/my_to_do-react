@@ -9,7 +9,7 @@ function Tasks({ posts }) {
   const [count, setCount] = useState('all');
   const selector = useSelector(state => state.tasks.filter(element => element.checked));
   const dispatch = useDispatch();
-  const ButtonClickEvHandler = () => {
+  const buttonClickEvHandler = () => {
     if (selector.length === 0) {
       return;
     }
@@ -41,6 +41,9 @@ function Tasks({ posts }) {
           task = { item }
           key = { item.id }
         />)}
+      <label>
+        count item
+      </label>  
       <button
         type="button"
         onClick={() => setCount('all')}
@@ -61,7 +64,7 @@ function Tasks({ posts }) {
       </button>
       <button
         type="button"
-        onClick={ButtonClickEvHandler}
+        onClick={buttonClickEvHandler}
       >
         Clear completed
       </button>
