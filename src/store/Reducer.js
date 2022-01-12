@@ -19,6 +19,15 @@ const rootReducer = (state = initialState, action) => {
       }),
       ],
     };
+    case 'edit-item': return {
+      tasks: [...state.tasks.map(item => {
+        if (item.id === action.payload.id) {
+          return { ...item, checked: false, title: action.payload.title };
+        }
+        return item;
+      }),
+      ],
+    };
     case 'set-allChecked': return {
       tasks: [...state.tasks.map((item, i, arr) => {
         return {

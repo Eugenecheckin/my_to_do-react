@@ -11,7 +11,7 @@ function Task({ task }) {
   }));
   const dispatch = useDispatch();
 
-  const [edit, setCount] = useState(false);
+  const [edit, setEdit] = useState('');
 
   const checkBoxClickEvHandler = () => {
     dispatch({
@@ -30,6 +30,29 @@ function Task({ task }) {
       },
     });
   };
+
+  const keyInputHandler = (event) => {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      if (edit.trim() === '') {
+        return;
+      }
+      const trimedTitle = edit.trim();
+      const payload = {
+        title: trimedTitle,
+        id: selector.id,
+        checked: false,
+      };
+      dispatch({
+        type: 'edit-item',
+        payload,
+      });
+      setEdit('');
+    }
+    if (event.keyCode === 27) {
+      setEdit('');
+    }
+  };
   return (
     <div className="todo-item">
       <ContentContainer>
@@ -38,9 +61,9 @@ function Task({ task }) {
           checked={selector.checked}
           onChange={checkBoxClickEvHandler}
         />
-        <label 
+        <label
           className="text-item"
-          onDoubleClick={() => setCount(true)}
+          onDoubleClick={() => setEdit(selector.title)}
         >
           {selector.title}
         </label>
@@ -49,7 +72,15 @@ function Task({ task }) {
           onClick={buttonClickEvHandler}
         />
       </ContentContainer>
-      { edit && <input />}
+      { edit &&
+        (<input
+          value={edit}
+          type='text'
+          onChange={e => setEdit(e.target.value)}
+          onKeyDown={keyInputHandler}
+          onBlur={e => setEdit('')}
+        />)
+      }
     </div>
   );
 }
