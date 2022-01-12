@@ -11,7 +11,7 @@ function Task({ task }) {
   }));
   const dispatch = useDispatch();
 
-  const [edit, setEdit] = useState('');
+  const [edit, setEdit] = useState({ title: '', done: '' });
 
   const checkBoxClickEvHandler = () => {
     dispatch({
@@ -31,13 +31,16 @@ function Task({ task }) {
     });
   };
 
+  const labelDobleClick = () => {setEdit(prev=> ({...prev,title: selector.title, done: true}));}
+
   const keyInputHandler = (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
-      if (edit.trim() === '') {
+      const templeteEdit = edit.title;
+      if (templeteEdit.trim() === '') {
         return;
       }
-      const trimedTitle = edit.trim();
+      const trimedTitle = templeteEdit.trim();
       const payload = {
         title: trimedTitle,
         id: selector.id,
@@ -47,10 +50,10 @@ function Task({ task }) {
         type: 'edit-item',
         payload,
       });
-      setEdit('');
+      setEdit(prev=> ({ ...prev, title: '', done: false }));
     }
     if (event.keyCode === 27) {
-      setEdit('');
+      setEdit(prev=> ({ ...prev, title: '', done: false }));
     }
   };
   return (
@@ -63,7 +66,7 @@ function Task({ task }) {
         />
         <label
           className="text-item"
-          onDoubleClick={() => setEdit(selector.title)}
+          onDoubleClick={labelDobleClick}
         >
           {selector.title}
         </label>
@@ -72,11 +75,11 @@ function Task({ task }) {
           onClick={buttonClickEvHandler}
         />
       </ContentContainer>
-      { edit &&
+      { edit.done &&
         (<input
-          value={edit}
+          value={edit.title}
           type='text'
-          onChange={e => setEdit(e.target.value)}
+          onChange={e => setEdit(prev=> ({...prev, title: e.target.value}))}
           onKeyDown={keyInputHandler}
           onBlur={e => setEdit('')}
         />)
