@@ -31,14 +31,16 @@ function Task({ task }) {
     });
   };
 
-  const labelDobleClick = () => {setEdit(prev=> ({...prev,title: selector.title, done: true}));}
+  const labelDobleClick = () => { 
+    setEdit(prev=> ({ ...prev, title: selector.title, done: true }));
+  };
 
   const keyInputHandler = (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       const templeteEdit = edit.title;
       if (templeteEdit.trim() === '') {
-        return;
+        buttonClickEvHandler();
       }
       const trimedTitle = templeteEdit.trim();
       const payload = {
