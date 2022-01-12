@@ -14,13 +14,13 @@ class Postform extends React.Component {
     };
   }
 
-  ClickAllCheckbox = () => {
+  clickAllCheckbox = () => {
     const { allChecked } = this.props;
-    const payload = this.CheckAll();
+    const payload = this.checkAll();
     allChecked(payload);
   };
 
-  ChangeInputHandler = (event) => {
+  changeInputHandler = (event) => {
     event.persist();
     this.setState(prev => (
       {
@@ -30,7 +30,7 @@ class Postform extends React.Component {
     ));
   };
 
-  KeyInputHandler = (event) => {
+  keyInputHandler = (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       const { title } = this.state;
@@ -55,7 +55,7 @@ class Postform extends React.Component {
     }
   };
 
-  CheckAll = () => {
+  checkAll = () => {
     const { posts } = this.props;
     if (posts.length === 0) {
       return false;
@@ -74,8 +74,8 @@ class Postform extends React.Component {
         </Typography>
         <input
           type="checkbox"
-          checked={this.CheckAll()}
-          onChange={this.ClickAllCheckbox}
+          checked={this.checkAll()}
+          onChange={this.clickAllCheckbox}
         />
         <input
           aria-describedby="input-task__helper"
@@ -85,8 +85,8 @@ class Postform extends React.Component {
           id="title"
           value={title}
           name="title"
-          onChange={this.ChangeInputHandler}
-          onKeyDown={this.KeyInputHandler}
+          onChange={this.changeInputHandler}
+          onKeyDown={this.keyInputHandler}
         />
       </div>
     );
