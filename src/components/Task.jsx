@@ -13,7 +13,7 @@ function Task({ task }) {
 
   const [edit, setCount] = useState(false);
 
-  const CheckBoxClickEvHandler = () => {
+  const checkBoxClickEvHandler = () => {
     dispatch({
       type: 'set-checked',
       payload: {
@@ -22,7 +22,7 @@ function Task({ task }) {
       },
     });
   };
-  const ButtonClickEvHandler = () => {
+  const buttonClickEvHandler = () => {
     dispatch({
       type: 'del-checked',
       payload: {
@@ -36,7 +36,7 @@ function Task({ task }) {
         <input
           type="checkbox"
           checked={selector.checked}
-          onChange={CheckBoxClickEvHandler}
+          onChange={checkBoxClickEvHandler}
         />
         <label 
           className="text-item"
@@ -46,7 +46,7 @@ function Task({ task }) {
         </label>
         <input
           type="button"
-          onClick={ButtonClickEvHandler}
+          onClick={buttonClickEvHandler}
         />
       </ContentContainer>
       { edit && <input />}
