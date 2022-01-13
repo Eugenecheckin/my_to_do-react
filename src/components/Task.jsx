@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { PostItem } from '../styles/Task.style';
+import { StyleTask } from '../styles/Task.style';
 
 function Task({ task }) {
   const selector = useSelector(state => state.tasks.find(element => {
@@ -63,7 +63,7 @@ function Task({ task }) {
   };
   return (
     <div className="todo-item">
-      <PostItem>
+      <StyleTask>
         <input
           type="checkbox"
           checked={selector.checked}
@@ -79,7 +79,7 @@ function Task({ task }) {
           type="button"
           onClick={buttonClickEvHandler}
         />
-      </PostItem>
+      </StyleTask>
       { edit.done &&
         (<input
           value={edit.title}

@@ -7,7 +7,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { PostItemContainer } from '../styles/Task.style';
 import Task from './Task';
 
 function Tasks({ posts }) {
@@ -49,11 +48,10 @@ function Tasks({ posts }) {
           }
         }
       }).map(item =>
-        <PostItemContainer>
         <Task
           task={item}
           key={item.id}
-        /></PostItemContainer>)}
+        />)}
       <label>
         item left: {' ' + itemLeft() }
       </label>
