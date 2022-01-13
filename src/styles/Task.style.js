@@ -65,6 +65,7 @@ export const StyleButton = styled.div`
       text-decoration: underline;
     }
   }
+  
   .activeButton {
     border-color: rgba(175, 47, 47, 0.2);
 }
