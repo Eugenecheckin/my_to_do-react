@@ -14,10 +14,28 @@ export const StyleTask = styled.div`
   }  
   input {    
     margin-right: 5px;        
-  }
-
-   
+  }   
 `;
+
+export const StyleEdit = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  border: 0;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+`;
+
 export const StyleTaskContainer = styled.div`
   position: relative;
   box-sizing: border-box;
@@ -28,7 +46,7 @@ export const StyleTaskContainer = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50px;
+    left: 40px;
   }
   
   

@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StyleTask, StyleTaskContainer } from '../styles/Task.style';
+import { StyleTask, StyleEdit, StyleTaskContainer } from '../styles/Task.style';
 
 function Task({ task }) {
   const selector = useSelector(state => state.tasks.find(element => {
@@ -83,6 +83,7 @@ function Task({ task }) {
           onClick={buttonClickEvHandler}
         />
       </StyleTask>
+      <StyleEdit>
       { edit.done &&
         (<input
           className='edit-input'
@@ -92,6 +93,7 @@ function Task({ task }) {
           onKeyDown={keyInputHandler}
           onBlur={() => setEdit({ title: '', done: false })}
         />)}
+      </StyleEdit>
     </StyleTaskContainer>
   );
 }
