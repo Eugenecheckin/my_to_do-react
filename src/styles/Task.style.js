@@ -9,6 +9,10 @@ export const StyleTask = styled.div`
   box-sizing: border-box;
   font-size: 26px;
   label{
-    padding: 15px 15px 15px 60px;
+    overflow-wrap: anywhere;
+    padding: 15px 15px 15px 15px;    
   }   
+`;
+export const StyleTaskContainer = styled.div`  
+  box-sizing: border-box;
 `;

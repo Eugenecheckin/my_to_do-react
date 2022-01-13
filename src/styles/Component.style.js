@@ -7,7 +7,8 @@ export const Wrapper = styled.section`
   color: #4d4d4d;  
   font-family: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  max-width: 500px;
+  max-width: 550px;
+  width: 100%;
   margin: 0 auto;
   padding: 4em;
   display: flex;

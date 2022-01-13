@@ -8,6 +8,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import Task from './Task';
+import { StyleTaskContainer } from '../styles/Task.style';
 
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
@@ -48,10 +49,10 @@ function Tasks({ posts }) {
           }
         }
       }).map(item =>
-        <Task
+        <StyleTaskContainer><Task
           task={item}
           key={item.id}
-        />)}
+        /></StyleTaskContainer>)}
       <label>
         item left: {' ' + itemLeft() }
       </label>
