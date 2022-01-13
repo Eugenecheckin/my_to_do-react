@@ -43,6 +43,7 @@ export const StyleTaskContainer = styled.div`
     /*&:hover{
       background-color: black;
     }*/
+    width: calc(100% - 40px);
     position: absolute;
     top: 0;
     bottom: 0;

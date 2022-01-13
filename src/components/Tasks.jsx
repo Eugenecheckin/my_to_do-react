@@ -10,7 +10,6 @@ import { useSelector, useDispatch, connect } from 'react-redux';
 import Task from './Task';
 import { StyleButton, ButtonFlexContainer, FootContainer } from '../styles/Task.style';
 
-
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
   const selector = useSelector(state => state.tasks.filter(element => element.checked));
@@ -49,57 +48,57 @@ function Tasks({ posts }) {
             return true;
           }
         }
-      }).map(item =>
-        <Task
-          className="Tast-todo"
-          task={item}
-          key={item.id}
-        />)}
-      <FootContainer>
-      <ButtonFlexContainer>
-      <label>
-        item left: {' ' + itemLeft() }
-      </label>
-      <ButtonFlexContainer>
-      <StyleButton>
-      <button
-        className={`${count === 'all' && 'activeButton'}`}
-        type="button"
-        onClick={() => setCount('all')}
-      >
-        All
-      </button>
-      </StyleButton>
-      <StyleButton>
-      <button
-        className={`${count === 'active' && 'activeButton'}`}
-        type="button"
-        onClick={() => setCount('active')}
-      >
-        Active
-      </button>
-      </StyleButton>
-      <StyleButton>
-      <button
-        className={`${count === 'completed' && 'activeButton'}`}
-        type="button"
-        onClick={() => setCount('completed')}
-      >
-        Completed
-      </button>
-      </StyleButton>
-      </ButtonFlexContainer>
-      <StyleButton>
-      <button
-        className="clearButton"
-        type="button"
-        onClick={buttonClickEvHandler}
-      >      
-        Clear completed
-      </button>
-      </StyleButton>
-      </ButtonFlexContainer>
-      </FootContainer> 
+      }).map(item => <Task
+        className="Tast-todo"
+        task={item}
+        key={item.id}
+      />)}
+      {posts.length && (
+        <FootContainer>
+          <ButtonFlexContainer>
+            <label>
+              item left: {' ' + itemLeft() }
+            </label>
+            <ButtonFlexContainer>
+              <StyleButton>
+                <button
+                  className={`${count === 'all' && 'activeButton'}`}
+                  type="button"
+                  onClick={() => setCount('all')}
+                >
+                  All
+                </button>
+              </StyleButton>
+              <StyleButton>
+                <button
+                  className={`${count === 'active' && 'activeButton'}`}
+                  type="button"
+                  onClick={() => setCount('active')}
+                >
+                  Active
+                </button>
+              </StyleButton>
+              <StyleButton>
+                <button
+                  className={`${count === 'completed' && 'activeButton'}`}
+                  type="button"
+                  onClick={() => setCount('completed')}
+                >
+                  Completed
+                </button>
+              </StyleButton>
+            </ButtonFlexContainer>
+            <StyleButton>
+              <button
+                className="clearButton"
+                type="button"
+                onClick={buttonClickEvHandler}
+              >
+                Clear completed
+              </button>
+            </StyleButton>
+          </ButtonFlexContainer>
+        </FootContainer>)}
     </>
   );
 }

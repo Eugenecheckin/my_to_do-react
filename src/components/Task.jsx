@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable jsx-quotes */
@@ -83,9 +84,10 @@ function Task({ task }) {
           onClick={buttonClickEvHandler}
         />
       </StyleTask>
-      <StyleEdit>
+      
       { edit.done &&
         (<input
+          autoFocus
           className='edit-input'
           value={edit.title}
           type='text'
@@ -93,7 +95,7 @@ function Task({ task }) {
           onKeyDown={keyInputHandler}
           onBlur={() => setEdit({ title: '', done: false })}
         />)}
-      </StyleEdit>
+      
     </StyleTaskContainer>
   );
 }
