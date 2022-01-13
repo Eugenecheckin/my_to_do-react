@@ -26,7 +26,7 @@ function Tasks({ posts }) {
         return true; 
       } 
     }).length;
-  }
+  };
   return (
     <>
       {posts.filter(post => {
@@ -50,7 +50,7 @@ function Tasks({ posts }) {
         />)}
       <label>
         item left: {' ' + itemLeft() }
-      </label>  
+      </label>
       <button
         type="button"
         onClick={() => setCount('all')}

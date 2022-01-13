@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ContentContainer } from '../styles/Component.style';
+import { PostItem } from '../styles/Task.style';
 
 function Task({ task }) {
   const selector = useSelector(state => state.tasks.find(element => {
@@ -31,7 +31,7 @@ function Task({ task }) {
     });
   };
 
-  const labelDobleClick = () => { 
+  const labelDobleClick = () => {
     setEdit(prev=> ({ ...prev, title: selector.title, done: true }));
   };
 
@@ -60,7 +60,7 @@ function Task({ task }) {
   };
   return (
     <div className="todo-item">
-      <ContentContainer>
+      <PostItem>
         <input
           type="checkbox"
           checked={selector.checked}
@@ -76,7 +76,7 @@ function Task({ task }) {
           type="button"
           onClick={buttonClickEvHandler}
         />
-      </ContentContainer>
+      </PostItem>
       { edit.done &&
         (<input
           value={edit.title}
