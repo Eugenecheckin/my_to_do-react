@@ -40,7 +40,7 @@ class Postform extends React.Component {
       if (title[0].trim() === '') {
         return;
       }
-      const trimedTitle = title[0].trim()
+      const trimedTitle = title[0].trim();
       const payload = {
         title: trimedTitle,
         id: new Date().getMilliseconds(),

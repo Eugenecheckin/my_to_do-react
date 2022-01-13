@@ -1,8 +1,3 @@
-/* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/jsx-wrap-multilines */
-/* eslint-disable jsx-quotes */
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { StyleTask, StyleEdit, StyleTaskContainer } from '../styles/Task.style';
@@ -86,15 +81,17 @@ function Task({ task }) {
       </StyleTask>
 
       { edit.done
-        && (<input
+        && (
+        <input
           autoFocus
-          className='edit-input'
+          className="edit-input"
           value={edit.title}
-          type='text'
+          type="text"
           onChange={e => setEdit(prev => ({ ...prev, title: e.target.value }))}
           onKeyDown={keyInputHandler}
           onBlur={() => setEdit({ title: '', done: false })}
-        />)}
+        />
+        )}
 
     </StyleTaskContainer>
   );

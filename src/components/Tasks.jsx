@@ -1,9 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable array-callback-return */
-/* eslint-disable prefer-template */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/jsx-wrap-multilines */
-/* eslint-disable arrow-body-style */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
@@ -25,13 +19,11 @@ function Tasks({ posts }) {
       },
     });
   };
-  const itemLeft = () => {
-    return posts.filter(post => {
-      if (post.checked === false) {
-        return true;
-      }
-    }).length;
-  };
+  const itemLeft = () => posts.filter(post => {
+    if (post.checked === false) {
+      return true;
+    }
+  }).length;
   return (
     <>
       {posts.filter(post => {
@@ -48,16 +40,20 @@ function Tasks({ posts }) {
             return true;
           }
         }
-      }).map(item => <Task
-        className="Tast-todo"
-        task={item}
-        key={item.id}
-      />)}
+      }).map(item => (
+        <Task
+          className="Tast-todo"
+          task={item}
+          key={item.id}
+        />
+      ))}
       {posts.length && (
         <FootContainer>
           <ButtonFlexContainer>
             <label>
-              item left: {' ' + itemLeft() }
+              item left:
+              {' '}
+              {` ${itemLeft()}` }
             </label>
             <ButtonFlexContainer>
               <StyleButton>
@@ -98,7 +94,8 @@ function Tasks({ posts }) {
               </button>
             </StyleButton>
           </ButtonFlexContainer>
-        </FootContainer>)}
+        </FootContainer>
+      )}
     </>
   );
 }
