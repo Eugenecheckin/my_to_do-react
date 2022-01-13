@@ -13,7 +13,7 @@ export const StyleTask = styled.div`
     padding: 15px 15px 15px 15px;    
   }  
   input {    
-    margin-right: 5px;    
+    margin-right: 5px;        
   }
 
    
@@ -31,4 +31,43 @@ export const StyleTaskContainer = styled.div`
     left: 50px;
   }
   
+  
+`;
+export const StyleButton = styled.div`
+  button{
+    border: none;
+  } 
+  .clearButton {
+    border: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .activeButton {
+    border-color: rgba(175, 47, 47, 0.2);         
+    color: #777;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+  }  
+`;
+
+export const ButtonFlexContainer = styled.div`  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const FootContainer = styled.div`
+  div {
+    color: #777;
+    padding: 10px 15px;
+    height: 20px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+  }  
+}
 `;

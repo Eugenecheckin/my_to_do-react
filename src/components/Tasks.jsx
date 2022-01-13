@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import Task from './Task';
-import { StyleTaskContainer } from '../styles/Task.style';
+import { StyleButton, ButtonFlexContainer, FootContainer } from '../styles/Task.style';
 
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
@@ -54,33 +54,51 @@ function Tasks({ posts }) {
           task={item}
           key={item.id}
         />)}
+      <FootContainer>
+      <ButtonFlexContainer>
       <label>
         item left: {' ' + itemLeft() }
       </label>
+      <ButtonFlexContainer>
+      <StyleButton>
       <button
+        className={`${count === 'all' && 'activeButton'}`}
         type="button"
         onClick={() => setCount('all')}
       >
         All
       </button>
+      </StyleButton>
+      <StyleButton>
       <button
+        className={`${count === 'active' && 'activeButton'}`}
         type="button"
         onClick={() => setCount('active')}
       >
         Active
       </button>
+      </StyleButton>
+      <StyleButton>
       <button
+        className={`${count === 'completed' && 'activeButton'}`}
         type="button"
         onClick={() => setCount('completed')}
       >
         Completed
       </button>
+      </StyleButton>
+      </ButtonFlexContainer>
+      <StyleButton>
       <button
+        className="clearButton"
         type="button"
         onClick={buttonClickEvHandler}
-      >
+      >      
         Clear completed
       </button>
+      </StyleButton>
+      </ButtonFlexContainer>
+      </FootContainer> 
     </>
   );
 }
