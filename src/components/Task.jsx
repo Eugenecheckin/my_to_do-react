@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StyleTask } from '../styles/Task.style';
+import { StyleTask, StyleTaskContainer } from '../styles/Task.style';
 
 function Task({ task }) {
   const selector = useSelector(state => state.tasks.find(element => {
@@ -14,7 +14,7 @@ function Task({ task }) {
   }));
   const dispatch = useDispatch();
 
-  const [edit, setEdit] = useState({ title: '', done: '' });
+  const [edit, setEdit] = useState({ title: '', done: false });
 
   const checkBoxClickEvHandler = () => {
     dispatch({
@@ -62,33 +62,37 @@ function Task({ task }) {
     }
   };
   return (
-    <div className="todo-item">
+    <StyleTaskContainer>
       <StyleTask>
         <input
+          className="check-todo"
           type="checkbox"
           checked={selector.checked}
           onChange={checkBoxClickEvHandler}
         />
         <label
-          className="text-item"
+          className="text-todo"
           onDoubleClick={labelDobleClick}
+          onBlur={() => setEdit({ title: '', done: false })}
         >
           {selector.title}
         </label>
         <input
+          className="remove-todo"
           type="button"
           onClick={buttonClickEvHandler}
         />
       </StyleTask>
       { edit.done &&
         (<input
+          className='edit-input'
           value={edit.title}
           type='text'
           onChange={e => setEdit(prev=> ({ ...prev, title: e.target.value }))}
           onKeyDown={keyInputHandler}
-          onBlur={() => setEdit('')}
+          onBlur={() => setEdit({ title: '', done: false })}
         />)}
-    </div>
+    </StyleTaskContainer>
   );
 }
 

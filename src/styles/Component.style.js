@@ -1,11 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   box-sizing: border-box;
   background: #f5f5f5;
-  color: #4d4d4d;  
-  font-family: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
   line-height: 1.4em;
   max-width: 550px;
   width: 100%;

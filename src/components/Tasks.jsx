@@ -49,10 +49,11 @@ function Tasks({ posts }) {
           }
         }
       }).map(item =>
-        <StyleTaskContainer><Task
+        <Task
+          className="Tast-todo"
           task={item}
           key={item.id}
-        /></StyleTaskContainer>)}
+        />)}
       <label>
         item left: {' ' + itemLeft() }
       </label>
