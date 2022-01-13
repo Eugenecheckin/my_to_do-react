@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const StyleTask = styled.div`
+export const StyleTask = styled.div`  
   display: flex;
   justify-content: space-between;
   align-items: center;
