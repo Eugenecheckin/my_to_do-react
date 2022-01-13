@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Typography } from '@mui/material';
+import { LogoWraper, Header } from '../styles/Component.style';
 
 import addTodoAction, { setAllChecked } from '../store/Action';
 
@@ -69,25 +69,27 @@ class Postform extends React.Component {
     const { title } = this.state;
     return (
       <div>
-        <Typography variant="h1">
+        <LogoWraper>
           todos
-        </Typography>
-        <input
-          type="checkbox"
-          checked={this.checkAll()}
-          onChange={this.clickAllCheckbox}
-        />
-        <input
-          aria-describedby="input-task__helper"
-          className="input-task"
-          placeholder="What needs to be done?"
-          type="text"
-          id="title"
-          value={title}
-          name="title"
-          onChange={this.changeInputHandler}
-          onKeyDown={this.keyInputHandler}
-        />
+        </LogoWraper>
+        <Header>
+          <input
+            type="checkbox"
+            checked={this.checkAll()}
+            onChange={this.clickAllCheckbox}
+          />
+          <input
+            aria-describedby="input-task__helper"
+            className="input-task"
+            placeholder="What needs to be done?"
+            type="text"
+            id="title"
+            value={title}
+            name="title"
+            onChange={this.changeInputHandler}
+            onKeyDown={this.keyInputHandler}
+          />
+        </Header>
       </div>
     );
   }

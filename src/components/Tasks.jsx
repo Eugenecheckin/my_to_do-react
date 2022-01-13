@@ -10,6 +10,7 @@ import { useSelector, useDispatch, connect } from 'react-redux';
 import Task from './Task';
 import { StyleButton, ButtonFlexContainer, FootContainer } from '../styles/Task.style';
 
+
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
   const selector = useSelector(state => state.tasks.filter(element => element.checked));

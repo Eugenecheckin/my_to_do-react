@@ -18,11 +18,21 @@ export const Wrapper = styled.div`
 
 export const LogoWraper = styled.div`
     position: absolute;
-    top: -155px;
+    top: 0px;
     width: 100%;
     font-size: 100px;
     font-weight: 100;
     text-align: center;
     color: rgba(175, 47, 47, 0.15);
     text-rendering: optimizeLegibility;
+`;
+export const Header = styled.div`
+  display: block;
+  .input-task {
+
+    padding: 16px 16px 16px 60px;
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+  }
 `;

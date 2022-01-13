@@ -48,9 +48,8 @@ export const StyleTaskContainer = styled.div`
     bottom: 0;
     left: 40px;
   }
-  
-  
-`;
+  `;
+
 export const StyleButton = styled.div`
   button{
     color: #777;
@@ -67,10 +66,8 @@ export const StyleButton = styled.div`
     }
   }
   .activeButton {
-    border-color: rgba(175, 47, 47, 0.2);         
-    
+    border-color: rgba(175, 47, 47, 0.2);
 }
-
 `;
 
 export const ButtonFlexContainer = styled.div`
@@ -81,11 +78,9 @@ export const ButtonFlexContainer = styled.div`
 `;
 
 export const FootContainer = styled.div`
-
     color: #777;
     padding: 10px 15px;
     height: 20px;
     text-align: center;
     border-top: 1px solid #e6e6e6;
-
 `;
