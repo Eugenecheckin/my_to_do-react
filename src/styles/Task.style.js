@@ -35,7 +35,12 @@ export const StyleTaskContainer = styled.div`
 `;
 export const StyleButton = styled.div`
   button{
-    border: none;
+    color: #777;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
   } 
   .clearButton {
     border: none;
@@ -45,17 +50,13 @@ export const StyleButton = styled.div`
   }
   .activeButton {
     border-color: rgba(175, 47, 47, 0.2);         
-    color: #777;
-    margin: 3px;
-    padding: 3px 7px;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 3px;
+    
 }
-  }  
+
 `;
 
-export const ButtonFlexContainer = styled.div`  
+export const ButtonFlexContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
