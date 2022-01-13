@@ -10,6 +10,6 @@ export const PostItem = styled.div`
   font-size: 24px;
   border-bottom: 1px solid; 
   &:last-child{
-    border-bottom: 5px solid; 
+    border-bottom: none; 
   }  
 `;
