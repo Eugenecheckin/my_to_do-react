@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable jsx-quotes */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -81,11 +84,10 @@ function Task({ task }) {
         (<input
           value={edit.title}
           type='text'
-          onChange={e => setEdit(prev=> ({...prev, title: e.target.value}))}
+          onChange={e => setEdit(prev=> ({ ...prev, title: e.target.value }))}
           onKeyDown={keyInputHandler}
-          onBlur={e => setEdit('')}
-        />)
-      }
+          onBlur={() => setEdit('')}
+        />)}
     </div>
   );
 }

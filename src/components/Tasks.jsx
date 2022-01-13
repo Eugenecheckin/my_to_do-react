@@ -1,8 +1,13 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable prefer-template */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
-
+import { useSelector, useDispatch, connect } from 'react-redux';
+import { PostItemContainer } from '../styles/Task.style';
 import Task from './Task';
 
 function Tasks({ posts }) {
@@ -21,10 +26,10 @@ function Tasks({ posts }) {
     });
   };
   const itemLeft = () => {
-    return posts.filter(post => { 
-      if (post.checked === false) { 
-        return true; 
-      } 
+    return posts.filter(post => {
+      if (post.checked === false) {
+        return true;
+      }
     }).length;
   };
   return (
@@ -44,10 +49,11 @@ function Tasks({ posts }) {
           }
         }
       }).map(item =>
+        <PostItemContainer>
         <Task
-          task = { item }
-          key = { item.id }
-        />)}
+          task={item}
+          key={item.id}
+        /></PostItemContainer>)}
       <label>
         item left: {' ' + itemLeft() }
       </label>

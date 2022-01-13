@@ -8,7 +8,11 @@ export const PostItem = styled.div`
   background-color: #fff;
   box-sizing: border-box;
   font-size: 24px;
-  border-bottom: 1px solid; 
+  
+`;
+
+export const PostItemContainer = styled.div`
+  border-bottom: 1px solid;   
   &:last-child{
     border-bottom: none; 
   }  
