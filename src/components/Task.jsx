@@ -36,7 +36,7 @@ function Task({ task }) {
   };
 
   const labelDobleClick = () => {
-    setEdit(prev=> ({ ...prev, title: selector.title, done: true }));
+    setEdit(prev => ({ ...prev, title: selector.title, done: true }));
   };
 
   const keyInputHandler = (event) => {
@@ -56,10 +56,10 @@ function Task({ task }) {
         type: 'edit-item',
         payload,
       });
-      setEdit(prev=> ({ ...prev, title: '', done: false }));
+      setEdit(prev => ({ ...prev, title: '', done: false }));
     }
     if (event.keyCode === 27) {
-      setEdit(prev=> ({ ...prev, title: '', done: false }));
+      setEdit(prev => ({ ...prev, title: '', done: false }));
     }
   };
   return (
@@ -84,18 +84,18 @@ function Task({ task }) {
           onClick={buttonClickEvHandler}
         />
       </StyleTask>
-      
-      { edit.done &&
-        (<input
+
+      { edit.done
+        && (<input
           autoFocus
           className='edit-input'
           value={edit.title}
           type='text'
-          onChange={e => setEdit(prev=> ({ ...prev, title: e.target.value }))}
+          onChange={e => setEdit(prev => ({ ...prev, title: e.target.value }))}
           onKeyDown={keyInputHandler}
           onBlur={() => setEdit({ title: '', done: false })}
         />)}
-      
+
     </StyleTaskContainer>
   );
 }

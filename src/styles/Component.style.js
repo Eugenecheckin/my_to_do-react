@@ -27,13 +27,13 @@ export const LogoWraper = styled.div`
     text-align: center;
     color: rgba(175, 47, 47, 0.15);    
 `;
-export const Header = styled.div`
-  display: block;
-  .input-task {
-
-    padding: 16px 16px 16px 60px;
-    border: none;
-    background: rgba(0, 0, 0, 0.003);
-    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-  }
+export const Header = styled.div`  
+  background-color:#fff;
+  border:none;
+  border-bottom: 1px solid #999;
+  box-sizing: border-box; 
+  .input-task {    
+    padding: 16px 16px 16px 60px;   
+    border:none;       
+  }  
 `;
