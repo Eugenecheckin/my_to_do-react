@@ -14,7 +14,24 @@ export const Wrapper = styled.div`
   flex-direction: column;  
   .app{
     width: 100%;
-  } 
+  }
+  input::-webkit-input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+  }
+
+  input::-moz-placeholder {
+	  font-style: italic;
+	  font-weight: 300;
+	  color: #e6e6e6;
+  }
+
+  input::input-placeholder {
+	  font-style: italic;
+	  font-weight: 300;
+	  color: #e6e6e6;
+  }
 `;
 
 export const LogoWraper = styled.div`    
@@ -29,10 +46,19 @@ export const Header = styled.div`
   background-color:#fff;
   border:none;
   border-bottom: 1px solid #999;
-  box-sizing: border-box; 
+  
   .input-task {    
     padding: 16px 16px 16px 60px;   
-    border:none;       
+    border:none;
+    font-size: 24px;
+    max-width: 470px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
   }
   .checkAll {
     position: absolute;
@@ -45,7 +71,7 @@ export const Header = styled.div`
     background-size: 40px 40px;
     position: absolute;
     background-repeat: no-repeat;
-    background-image: ${props => props.checkAll? `url(../checkAllfalse.svg)` : `url(../checkAlltrue.svg)`};    
+    background-image: ${props => (props.checkAll ? 'url(../checkAllfalse.svg)' : 'url(../checkAlltrue.svg)')};    
   }
 
 `;
