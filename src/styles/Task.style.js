@@ -95,9 +95,10 @@ export const StyleEdit = styled.div`
 `;
 
 export const StyleTaskContainer = styled.div`
+
   position: relative;
   box-sizing: border-box;
-  
+  border-bottom: 1px solid #ededed;
   .edit-input {    
     width: calc(100% - 50px);
     position: absolute;
