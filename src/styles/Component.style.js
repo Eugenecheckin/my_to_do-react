@@ -46,6 +46,7 @@ export const Header = styled.div`
   
   .input-task {    
     padding: 16px 16px 16px 60px;   
+    outline: none;
     border:none;
     font-size: 24px;
     max-width: 550px;
