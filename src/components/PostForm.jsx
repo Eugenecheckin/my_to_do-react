@@ -75,7 +75,7 @@ class Postform extends React.Component {
         <LogoWraper>
           todos
         </LogoWraper>
-        <Header checkAll={this.state.allChecked}>
+        <Header checkAll={this.checkAll()}>
           <input
             className="checkAll"
             id="check-all"

@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const StyleTask = styled.div`
-
+export const StyleTask = styled.div`  
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,12 +16,18 @@ export const StyleTask = styled.div`
   input {    
     margin-right: 5px;
             
+  }
+    
+  .check-todo {
+    position: absolute;
+    opacity: 0;
   }   
   .labelCheck {
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
+    background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
   }
 `;

@@ -10,10 +10,9 @@ function Task({ task }) {
   }));
   const dispatch = useDispatch();
 
-  const [edit, setEdit] = useState({ title: '', done: false, viewLab: false });
+  const [edit, setEdit] = useState({ title: '', done: false });
 
   const checkBoxClickEvHandler = () => {
-    //setEdit({ viewLab: !edit.viewLab })
     dispatch({
       type: 'set-checked',
       payload: {
@@ -60,7 +59,7 @@ function Task({ task }) {
   };
   return (
     <StyleTaskContainer>
-      <StyleTask checkEdit={edit.done}>
+      <StyleTask checkEdit={selector.checked}>
         <div>
           <input
             id={`${task.id}`}
@@ -72,10 +71,9 @@ function Task({ task }) {
           <label
               className='labelCheck' 
               for={`${task.id}`}
-          >        
-            ..............
+          >
           </label>
-          </div>
+        </div>
         <label
           className="text-todo"
           onDoubleClick={labelDobleClick}
