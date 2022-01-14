@@ -14,10 +14,9 @@ export const StyleTask = styled.div`
     padding: 15px 15px 15px 15px;    
   }  
   input {    
-    margin-right: 5px;
-            
+    margin-right: 5px;            
   }
-  .check-todo-conteiner{
+  .check-todo-conteiner {
     width: 60px;
     height: 60px;
   }  
@@ -59,7 +58,7 @@ export const StyleTaskContainer = styled.div`
   position: relative;
   box-sizing: border-box;
   .edit-input {     
-    width: calc(100% - 40px);
+    width: calc(100% - 50px);
     position: absolute;
     top: 0;
     bottom: 0;
