@@ -60,7 +60,7 @@ function Task({ task }) {
   return (
     <StyleTaskContainer>
       <StyleTask checkEdit={selector.checked}>
-        <div>
+        <div className='check-todo-conteiner'>
           <input
             id={`${task.id}`}
             className="check-todo"

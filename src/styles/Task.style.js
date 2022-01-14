@@ -17,7 +17,10 @@ export const StyleTask = styled.div`
     margin-right: 5px;
             
   }
-    
+  .check-todo-conteiner{
+    width: 60px;
+    height: 60px;
+  }  
   .check-todo {
     position: absolute;
     opacity: 0;
