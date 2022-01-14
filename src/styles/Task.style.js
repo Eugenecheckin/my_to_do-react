@@ -20,12 +20,14 @@ export const StyleTask = styled.div`
     width: 40px;
     height: 40px;  
     padding : 0;
-
   }  
 
   .check-todo {
     position: relative;
+    z-index: 99;
     opacity: 0;
+    width: 40px;
+    width: 40px;
   }
   .text-todo {
     padding: 0;
@@ -36,6 +38,8 @@ export const StyleTask = styled.div`
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
+    top : 0;
+    left: 0;
     background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checkAllfalse.svg)` : `url(../checkAlltrue.svg)`};    
   }
@@ -46,6 +50,7 @@ export const StyleTask = styled.div`
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
+    color: red;
     //position: absolute;
     //background-repeat: no-repeat;
     //background-image: ${`url(../remove.svg)`};   
