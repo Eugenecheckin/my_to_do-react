@@ -1,7 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const StyleTask = styled.div`  
+export const StyleTask = styled.div`
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +14,8 @@ export const StyleTask = styled.div`
     padding: 15px 15px 15px 15px;    
   }  
   input {    
-    margin-right: 5px;        
+    margin-right: 5px;
+            
   }   
 `;
 
@@ -39,10 +41,7 @@ export const StyleEdit = styled.div`
 export const StyleTaskContainer = styled.div`
   position: relative;
   box-sizing: border-box;
-  .edit-input { 
-    /*&:hover{
-      background-color: black;
-    }*/
+  .edit-input {     
     width: calc(100% - 40px);
     position: absolute;
     top: 0;

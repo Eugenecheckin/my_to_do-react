@@ -74,10 +74,17 @@ class Postform extends React.Component {
         </LogoWraper>
         <Header>
           <input
+            className="checkAll"
+            id="check-all"
             type="checkbox"
             checked={this.checkAll()}
             onChange={this.clickAllCheckbox}
           />
+          <label
+            className='labelAll' 
+            for="check-all">
+              ..
+          </label>
           <input
             aria-describedby="input-task__helper"
             className="input-task"
