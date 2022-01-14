@@ -47,18 +47,14 @@ export const StyleTask = styled.div`
   }
   
   .label-del {
-    //visibility: hidden;
-    //padding: 0;
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
-    color: red;
-    //position: absolute;
-    //background-repeat: no-repeat;
-    //background-image: ${`url(../remove.svg)`};   
+    color: #af5b5e;
+    position: absolute;
+    margin: auto 0;s
+    font-size: 30px;
   }
-  
-
 
   .remove-todo-conteiner {
     width: 60px;
