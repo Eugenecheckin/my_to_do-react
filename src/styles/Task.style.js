@@ -23,7 +23,7 @@ export const StyleTask = styled.div`
   }  
 
   .check-todo {
-    position: absolute;
+    position: relative;
     opacity: 0;
   }
   .text-todo {
@@ -36,7 +36,7 @@ export const StyleTask = styled.div`
     background-size: 40px 40px;
     position: absolute;
     background-repeat: no-repeat;
-    background-image: ${props => props.checkEdit? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
+    background-image: ${props => props.checkEdit? `url(../checkAllfalse.svg)` : `url(../checkAlltrue.svg)`};    
   }
   
   .label-del {

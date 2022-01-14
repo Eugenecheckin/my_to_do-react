@@ -69,7 +69,7 @@ function Task({ task }) {
             onChange={checkBoxClickEvHandler}
           />
           <label
-              className='labelCheck' 
+              className='labelCheck'
               for={`${task.id}`}
           >
           </label>
