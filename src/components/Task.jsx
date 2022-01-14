@@ -82,7 +82,7 @@ function Task({ task }) {
           {selector.title}
         </label>
         <div className='remove-todo-conteiner' onClick={buttonClickEvHandler}>
-          <img className='label-del'></img>
+          <label className='label-del'>x</label>
         </div>
       </StyleTask>
 

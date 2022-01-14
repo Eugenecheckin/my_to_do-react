@@ -48,7 +48,7 @@ export const StyleTask = styled.div`
     background-size: 40px 40px;
     //position: absolute;
     //background-repeat: no-repeat;
-    background-image: ${`url(../remove.svg)`};   
+    //background-image: ${`url(../remove.svg)`};   
   }
   
 
