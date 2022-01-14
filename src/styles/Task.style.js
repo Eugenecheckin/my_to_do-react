@@ -28,6 +28,7 @@ export const StyleTask = styled.div`
     padding: 0;
   }   
   .labelCheck {
+    padding: 0;
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
@@ -36,6 +37,7 @@ export const StyleTask = styled.div`
     background-image: ${props => props.checkEdit? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
   }
   .label-del{
+    padding: 0;
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
