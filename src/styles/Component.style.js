@@ -47,5 +47,7 @@ export const Header = styled.div`
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
+    position: absolute;
+    background-image: ${props => props.checkAll? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
   }  
 `;

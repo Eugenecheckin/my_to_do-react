@@ -17,6 +17,13 @@ export const StyleTask = styled.div`
     margin-right: 5px;
             
   }   
+  .labelCheck {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    position: absolute;
+    background-image: ${props => props.checkEdit? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
+  }
 `;
 
 export const StyleEdit = styled.div`
@@ -36,6 +43,7 @@ export const StyleEdit = styled.div`
   border: 1px solid #999;
   box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  
 `;
 
 export const StyleTaskContainer = styled.div`

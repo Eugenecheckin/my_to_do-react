@@ -11,6 +11,7 @@ class Postform extends React.Component {
     super(props);
     this.state = {
       title: '',
+      allChecked: false,
     };
   }
 
@@ -18,6 +19,7 @@ class Postform extends React.Component {
     const { allChecked } = this.props;
     const payload = this.checkAll();
     allChecked(payload);
+    this.setState({ allChecked: !this.state.allChecked });
   };
 
   changeInputHandler = (event) => {
@@ -62,7 +64,8 @@ class Postform extends React.Component {
     }
     if (posts.find(item => item.checked === false) === undefined) {
       return true;
-    } return false;
+    }
+    return false;
   };
 
   render() {
@@ -72,7 +75,7 @@ class Postform extends React.Component {
         <LogoWraper>
           todos
         </LogoWraper>
-        <Header>
+        <Header checkAll={this.state.allChecked}>
           <input
             className="checkAll"
             id="check-all"
@@ -83,7 +86,7 @@ class Postform extends React.Component {
           <label
             className='labelAll' 
             for="check-all">
-              ..
+              .
           </label>
           <input
             aria-describedby="input-task__helper"
