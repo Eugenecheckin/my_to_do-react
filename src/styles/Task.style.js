@@ -31,6 +31,7 @@ export const StyleTask = styled.div`
   }
   .text-todo {
     padding: 0;
+    text-decoration: ${props => props.checkEdit? `line-through` : `none`};
   }   
   .labelCheck {
     padding: 0;
