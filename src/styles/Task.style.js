@@ -18,8 +18,9 @@ export const StyleTask = styled.div`
   }
   .check-todo-conteiner {    
     width: 60px;
-    height: 60px;    
-    
+    height: 60px;  
+    padding : 0;
+
   }  
 
   .check-todo {
@@ -44,15 +45,18 @@ export const StyleTask = styled.div`
     //padding: 0;
     width: 40px;
     height: 40px;
-    //background-size: 40px 40px;
+    background-size: 40px 40px;
     //position: absolute;
     //background-repeat: no-repeat;
     background-image: ${`url(../remove.svg)`};   
   }
+  
+
 
   .remove-todo-conteiner {
     width: 60px;
-    height: 60px;    
+    height: 60px;   
+    visibility: hidden;
 
   }
   .remove-todo {
@@ -87,7 +91,8 @@ export const StyleEdit = styled.div`
 export const StyleTaskContainer = styled.div`
   position: relative;
   box-sizing: border-box;
-  .edit-input {     
+  
+  .edit-input {    
     width: calc(100% - 50px);
     position: absolute;
     top: 0;

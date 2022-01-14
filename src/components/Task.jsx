@@ -98,7 +98,6 @@ function Task({ task }) {
           onBlur={() => setEdit({ title: '', done: false })}
         />
         )}
-
     </StyleTaskContainer>
   );
 }
