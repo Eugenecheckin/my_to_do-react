@@ -23,6 +23,9 @@ export const StyleTask = styled.div`
   .check-todo {
     position: absolute;
     opacity: 0;
+  }
+  .text-todo {
+    padding: 0;
   }   
   .labelCheck {
     width: 40px;
