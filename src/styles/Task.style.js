@@ -16,10 +16,12 @@ export const StyleTask = styled.div`
   input {    
     margin-right: 5px;            
   }
-  .check-todo-conteiner {
+  .check-todo-conteiner {    
     width: 60px;
-    height: 60px;
+    height: 60px;    
+    
   }  
+
   .check-todo {
     position: absolute;
     opacity: 0;
@@ -36,24 +38,30 @@ export const StyleTask = styled.div`
     background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
   }
-  .label-del{
-    padding: 0;
+  
+  .label-del {
+    //visibility: hidden;
+    //padding: 0;
     width: 40px;
     height: 40px;
-    background-size: 40px 40px;
-    position: absolute;
-    background-repeat: no-repeat;
+    //background-size: 40px 40px;
+    //position: absolute;
+    //background-repeat: no-repeat;
     background-image: ${`url(../remove.svg)`};   
   }
 
   .remove-todo-conteiner {
     width: 60px;
-    height: 60px;
+    height: 60px;    
+
   }
   .remove-todo {
     position: absolute;
-    opacity: 0;      
+    visibility: hidden;
   }
+  &:hover > .remove-todo-conteiner {
+    visibility: visible;
+    }
 `;
 
 export const StyleEdit = styled.div`
