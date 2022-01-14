@@ -47,7 +47,7 @@ function Tasks({ posts }) {
           key={item.id}
         />
       ))}
-      {posts.length && (
+      {!!posts.length && (
         <FootContainer>
           <ButtonFlexContainer>
             <label>

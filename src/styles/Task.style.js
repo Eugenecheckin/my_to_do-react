@@ -35,6 +35,23 @@ export const StyleTask = styled.div`
     background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checkAlltrue.svg)` : `url(../checkAllfalse.svg)`};    
   }
+  .label-del{
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: ${`url(../remove.svg)`};   
+  }
+
+  .remove-todo-conteiner {
+    width: 60px;
+    height: 60px;
+  }
+  .remove-todo {
+    position: absolute;
+    opacity: 0;      
+  }
 `;
 
 export const StyleEdit = styled.div`

@@ -81,17 +81,19 @@ function Task({ task }) {
         >
           {selector.title}
         </label>
-        <input
-          id={`${task.id}что`}
-          className="remove-todo"
-          type="button"
-          onClick={buttonClickEvHandler}
-        />
-        <label
-          className='labelRem'
-          for={`${task.id}что`}
-        >          
-        </label>
+        <div className='remove-todo-conteiner'>
+          <input
+            id={`${task.id}-del`}
+            className="remove-todo"
+            type="button"
+            onClick={buttonClickEvHandler}
+          />
+          <label
+            className='label-del'
+            for={`${task.id}-del`}
+          >          
+          </label>
+        </div>
       </StyleTask>
 
       { edit.done
