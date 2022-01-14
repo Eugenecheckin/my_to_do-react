@@ -30,6 +30,7 @@ export const StyleTask = styled.div`
     width: 40px;
   }
   .text-todo {
+    width: 100%;
     padding: 0;
     text-decoration: ${props => props.checkEdit? `line-through` : `none`};
   }   
