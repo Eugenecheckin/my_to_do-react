@@ -1,14 +1,11 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   box-sizing: border-box;
-  background: #f5f5f5;
   color: #4d4d4d;
   max-width: 550px;
   width: 100%;
   margin: 0 auto;
-  //padding: 4em;
   display: flex;
   align-items: center;
   flex-direction: column;  
@@ -16,21 +13,21 @@ export const Wrapper = styled.div`
     width: 100%;
   }
   input::-webkit-input-placeholder {
-	font-style: italic;
-	font-weight: 300;
-	color: #e6e6e6;
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
   }
 
   input::-moz-placeholder {
-	  font-style: italic;
-	  font-weight: 300;
-	  color: #e6e6e6;
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
   }
 
   input::input-placeholder {
-	  font-style: italic;
-	  font-weight: 300;
-	  color: #e6e6e6;
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
   }
 `;
 
@@ -51,7 +48,8 @@ export const Header = styled.div`
     padding: 16px 16px 16px 60px;   
     border:none;
     font-size: 24px;
-    max-width: 470px;
+    max-width: 550px;
+    width: 100%;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.003);
     box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
