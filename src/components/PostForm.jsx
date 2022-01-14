@@ -85,8 +85,7 @@ class Postform extends React.Component {
           />
           <label
             className='labelAll' 
-            for="check-all">
-              .
+            for="check-all">              
           </label>
           <input
             aria-describedby="input-task__helper"
