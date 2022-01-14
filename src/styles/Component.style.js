@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   .app{
     width: 100%;
   }
-  input::-webkit-input-placeholder {
+  input::-webkit-input-placeholder {    
     font-style: italic;
     font-weight: 300;
     color: #e6e6e6;

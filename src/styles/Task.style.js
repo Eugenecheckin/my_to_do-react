@@ -43,7 +43,7 @@ export const StyleTask = styled.div`
     top : 0;
     left: 0;
     background-repeat: no-repeat;
-    background-image: ${props => props.checkEdit? `url(../checkAllfalse.svg)` : `url(../checkAlltrue.svg)`};    
+    background-image: ${props => props.checkEdit? `url(../checked.svg)` : `url(../unChecked.svg)`};    
   }
   
   .label-del {
