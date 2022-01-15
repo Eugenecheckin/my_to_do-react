@@ -47,17 +47,23 @@ export const StyleTask = styled.div`
   }
   
   .label-del {
+    top: 8px;
+    padding: 0;
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
-    color: #af5b5e;
+    color: #cc9a9a;
     position: absolute;
-    margin: auto 0;s
+    margin: auto 0;
     font-size: 30px;
+    transition: color 0.2s ease-out;
+    &:hover {
+      color: #af5b5e;
+    }
   }
 
   .remove-todo-conteiner {
-    width: 60px;
+    width: 50px;
     height: 60px;   
     visibility: hidden;
 
