@@ -130,15 +130,12 @@ export const StyleButton = styled.div`
     border: 1px solid transparent;
     border-radius: 3px;
   } 
-  //background-color: ${props => props.isCheck? 'red' : 'blue'};
   .clearButton {
     border: none;
     &:hover{
       text-decoration: underline;
-    }
-    //visibility: ${props => props.isCheck? 'visible' : 'hidden'};    
+    } 
   }
-  
   .activeButton {
     border-color: rgba(175, 47, 47, 0.2);
 }
