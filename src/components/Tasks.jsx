@@ -50,7 +50,7 @@ function Tasks({ posts }) {
       {!!posts.length && (
         <FootContainer>
           <ButtonFlexContainer>
-            <label>
+            <label className='itemLeft'>
               {` ${itemLeft()}` }
               {' '}
               items left

@@ -27,12 +27,14 @@ export const StyleTask = styled.div`
     z-index: 99;
     opacity: 0;
     width: 40px;
-    width: 40px;
+    height: 40px;
   }
   .text-todo {
     width: 100%;
     padding: 0;
+    padding-left: 20px;
     text-decoration: ${props => props.checkEdit? `line-through` : `none`};
+    opacity: ${props => props.checkEdit? `.3` : `1`};;
   }   
   .labelCheck {
     padding: 0;
@@ -40,7 +42,7 @@ export const StyleTask = styled.div`
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
-    top : 0;
+    top : 10px;
     left: 0;
     background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checked.svg)` : `url(../unChecked.svg)`};    
@@ -56,7 +58,6 @@ export const StyleTask = styled.div`
     position: absolute;
     margin: auto 0;
     font-size: 30px;
-    font-weight: bold;
     transition: color 0.2s ease-out;
     &:hover {
       color: #af5b5e;
@@ -99,18 +100,23 @@ export const StyleEdit = styled.div`
 `;
 
 export const StyleTaskContainer = styled.div`
-
   position: relative;
   box-sizing: border-box;
   border-bottom: 1px solid #ededed;
-  .edit-input {    
-    width: calc(100% - 50px);
+  .edit-input {
+    padding-left: 14px;
+    color: #4d4d4d;
+    font-size: 26px;
+    outline: none;    
+    border: 1px solid #999;
+    width: calc(100% - 65px);
     position: absolute;
-    top: 0;
+    top: 0px;
     bottom: 0;
-    left: 40px;
-    box-shadow: inset 0 -1px 5px 0 rgb(0 0 0 / 20%);
-  }  
+    left: 45px;
+    box-shadow: inset 0 -1px 5px 0 rgb(0 0 0 / 20%);   
+  }
+    
   `;
 
 export const StyleButton = styled.div`
@@ -140,6 +146,9 @@ export const ButtonFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .itemLeft {
+    font-size: 14px;
+  }
 `;
 
 export const FootContainer = styled.div`

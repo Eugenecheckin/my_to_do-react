@@ -42,10 +42,9 @@ export const LogoWraper = styled.div`
 `;
 export const Header = styled.div`  
   background-color:#fff;
-  border:none;
-  border-bottom: ${props => (props.checkAll ? '1px solid #ededed' : 'none')};
-  
-  .input-task {    
+  border:none;  
+  border-bottom: '1px solid #ededed';  
+  .input-task {       
     padding: 16px 16px 16px 60px;   
     outline: none;
     border:none;
@@ -59,6 +58,8 @@ export const Header = styled.div`
     font-family: inherit;
     font-weight: inherit;
     line-height: 1.4em;
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);  
+    //border-bottom: ${props => (props.checkAll ? '1px solid #ededed' : 'none')};
     //box-shadow: ${props => (props.checkAll ? 'inset 0 -2px 1px rgb(0 0 0 / 3%)' : 'none')};
   }
   .checkAll {
@@ -66,12 +67,14 @@ export const Header = styled.div`
     opacity: 0;
   }
   .labelAll {
+    font-size: 22px;
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
-    background-repeat: no-repeat;
-    transform: rotate(90deg);        
+    margin-top: 30px;    
+    transform: rotate(90deg);   
+    opacity: ${props => (props.checkAll ? '1' : '.3')};     
   }
 
 `;
