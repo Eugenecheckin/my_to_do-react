@@ -7,6 +7,7 @@ import { StyleButton, ButtonFlexContainer, FootContainer } from '../styles/Task.
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
   const selector = useSelector(state => state.tasks.filter(element => element.checked));
+
   const dispatch = useDispatch();
   const buttonClickEvHandler = () => {
     if (selector.length === 0) {
@@ -24,6 +25,7 @@ function Tasks({ posts }) {
       return true;
     }
   }).length;
+
   return (
     <>
       {posts.filter(post => {
@@ -84,7 +86,7 @@ function Tasks({ posts }) {
                 </button>
               </StyleButton>
             </ButtonFlexContainer>
-            <StyleButton>
+            <StyleButton isCheck={true}>
               <button
                 className="clearButton"
                 type="button"

@@ -44,7 +44,7 @@ export const Header = styled.div`
   background-color:#fff;
   border:none;  
   border-bottom: '1px solid #ededed';  
-  .input-task {       
+  .input-task {     
     padding: 16px 16px 16px 60px;   
     outline: none;
     border:none;
@@ -66,7 +66,7 @@ export const Header = styled.div`
     position: absolute;
     opacity: 0;
   }
-  .labelAll {
+  .labelAll {    
     font-size: 22px;
     width: 40px;
     height: 40px;
@@ -75,6 +75,7 @@ export const Header = styled.div`
     margin-top: 30px;    
     transform: rotate(90deg);   
     opacity: ${props => (props.checkAll ? '1' : '.3')};     
+    visibility: ${props => (props.hasTask ? 'visible' : 'hidden')};
   }
 
 `;

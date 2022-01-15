@@ -67,6 +67,14 @@ class Postform extends React.Component {
     return false;
   };
 
+  hasTask = () => {
+    const { posts } = this.props;
+    if (posts.length === 0) {
+      return false;
+    }
+    return true;
+  };
+
   render() {
     const { title } = this.state;
     return (
@@ -74,13 +82,13 @@ class Postform extends React.Component {
         <LogoWraper>
           todos
         </LogoWraper>
-        <Header checkAll={this.checkAll()}>
+        <Header checkAll={this.checkAll()} hasTask={this.hasTask()}>
           <input
             className="checkAll"
             id="check-all"
             type="checkbox"
             checked={this.checkAll()}
-            onChange={this.clickAllCheckbox}            
+            onChange={this.clickAllCheckbox}
           />
           <label
             className="labelAll"

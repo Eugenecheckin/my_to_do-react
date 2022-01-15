@@ -30,6 +30,7 @@ export const StyleTask = styled.div`
     height: 40px;
   }
   .text-todo {
+    font-size: 24px;
     width: 100%;
     padding: 0;
     padding-left: 20px;
@@ -103,10 +104,10 @@ export const StyleTaskContainer = styled.div`
   position: relative;
   box-sizing: border-box;
   border-bottom: 1px solid #ededed;
-  .edit-input {
+  .edit-input {    
     padding-left: 14px;
     color: #4d4d4d;
-    font-size: 26px;
+    font-size: 24px;
     outline: none;    
     border: 1px solid #999;
     width: calc(100% - 65px);
@@ -129,11 +130,13 @@ export const StyleButton = styled.div`
     border: 1px solid transparent;
     border-radius: 3px;
   } 
+  //background-color: ${props => props.isCheck? 'red' : 'blue'};
   .clearButton {
     border: none;
     &:hover{
       text-decoration: underline;
     }
+    //visibility: ${props => props.isCheck? 'visible' : 'hidden'};    
   }
   
   .activeButton {
