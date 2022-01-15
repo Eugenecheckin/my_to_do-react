@@ -25,6 +25,11 @@ function Tasks({ posts }) {
       return true;
     }
   }).length;
+  const itemDone = () => posts.filter(post => {
+    if (post.checked === true) {
+      return true;
+    }
+  }).length;
 
   return (
     <>
@@ -86,7 +91,7 @@ function Tasks({ posts }) {
                 </button>
               </StyleButton>
             </ButtonFlexContainer>
-            <StyleButton isCheck={true}>
+            <StyleButton isCheck={`${itemDone()}`}>
               <button
                 className="clearButton"
                 type="button"
