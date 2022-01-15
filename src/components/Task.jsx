@@ -70,7 +70,7 @@ function Task({ task }) {
           />
           <label
               className='labelCheck'
-              for={`${task.id}`}
+              htmlFor={`${task.id}`}
           >
           </label>
         </div>

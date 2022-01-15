@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -84,8 +83,8 @@ class Postform extends React.Component {
             onChange={this.clickAllCheckbox}
           />
           <label
-            className='labelAll' 
-            for="check-all">              
+            className="labelAll"
+            htmlFor="check-all">❯
           </label>
           <input
             aria-describedby="input-task__helper"

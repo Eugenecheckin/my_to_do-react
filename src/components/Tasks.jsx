@@ -51,9 +51,9 @@ function Tasks({ posts }) {
         <FootContainer>
           <ButtonFlexContainer>
             <label>
-              item left:
-              {' '}
               {` ${itemLeft()}` }
+              {' '}
+              items left
             </label>
             <ButtonFlexContainer>
               <StyleButton>

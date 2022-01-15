@@ -64,13 +64,14 @@ export const Header = styled.div`
     opacity: 0;
   }
   .labelAll {
-    background-image: url(../checkmark.png);
+    //background-image: url(../checkmark.png);
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
     background-repeat: no-repeat;
-    background-image: ${props => (props.checkAll ? 'url(../checkAllfalse.svg)' : 'url(../checkAlltrue.svg)')};    
+    transform: rotate(90deg);
+    //background-image: ${props => (props.checkAll ? 'url(../checkAllfalse.svg)' : 'url(../checkAlltrue.svg)')};    
   }
 
 `;
