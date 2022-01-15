@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   color: #4d4d4d;
   max-width: 550px;
@@ -42,7 +43,7 @@ export const LogoWraper = styled.div`
 export const Header = styled.div`  
   background-color:#fff;
   border:none;
-  border-bottom: 1px solid #999;
+  border-bottom: ${props => (props.checkAll ? '1px solid #ededed' : 'none')};
   
   .input-task {    
     padding: 16px 16px 16px 60px;   
@@ -58,20 +59,19 @@ export const Header = styled.div`
     font-family: inherit;
     font-weight: inherit;
     line-height: 1.4em;
+    //box-shadow: ${props => (props.checkAll ? 'inset 0 -2px 1px rgb(0 0 0 / 3%)' : 'none')};
   }
   .checkAll {
     position: absolute;
     opacity: 0;
   }
   .labelAll {
-    //background-image: url(../checkmark.png);
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
     background-repeat: no-repeat;
-    transform: rotate(90deg);
-    //background-image: ${props => (props.checkAll ? 'url(../checkAllfalse.svg)' : 'url(../checkAlltrue.svg)')};    
+    transform: rotate(90deg);        
   }
 
 `;

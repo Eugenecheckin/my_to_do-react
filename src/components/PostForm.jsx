@@ -80,7 +80,7 @@ class Postform extends React.Component {
             id="check-all"
             type="checkbox"
             checked={this.checkAll()}
-            onChange={this.clickAllCheckbox}
+            onChange={this.clickAllCheckbox}            
           />
           <label
             className="labelAll"
@@ -88,6 +88,7 @@ class Postform extends React.Component {
             ❯
           </label>
           <input
+            autoFocus
             aria-describedby="input-task__helper"
             className="input-task"
             placeholder="What needs to be done?"

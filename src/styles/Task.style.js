@@ -56,6 +56,7 @@ export const StyleTask = styled.div`
     position: absolute;
     margin: auto 0;
     font-size: 30px;
+    font-weight: bold;
     transition: color 0.2s ease-out;
     &:hover {
       color: #af5b5e;
@@ -92,7 +93,7 @@ export const StyleEdit = styled.div`
   color: inherit;
   padding: 6px;
   border: 1px solid #999;
-  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   
 `;
@@ -108,7 +109,8 @@ export const StyleTaskContainer = styled.div`
     top: 0;
     bottom: 0;
     left: 40px;
-  }
+    box-shadow: inset 0 -1px 5px 0 rgb(0 0 0 / 20%);
+  }  
   `;
 
 export const StyleButton = styled.div`
@@ -144,8 +146,7 @@ export const FootContainer = styled.div`
     color: #777;
     padding: 5px 15px;
     height: 20px;
-    text-align: center;
-    border-top: 1px solid #e6e6e6;
+    text-align: center;    
     background-color: white;
     height: 100%;
     position: relative;
