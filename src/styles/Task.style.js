@@ -156,6 +156,9 @@ export const ButtonFlexContainer = styled.div`
   .itemLeft {
     font-size: 14px;
   }
+  @media screen and (max-width: 320px) {
+      flex-direction: column;
+    }
 `;
 
 export const FootContainer = styled.div`
@@ -175,6 +178,6 @@ export const FootContainer = styled.div`
       height: 50px;
       overflow: hidden;
       box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgb(0 0 0 / 20%), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgb(0 0 0 / 20%);
-    }
-    
+    }    
+
 `;
