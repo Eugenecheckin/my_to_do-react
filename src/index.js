@@ -6,11 +6,17 @@ import { logger } from 'redux-logger';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './store/Reducer';
+import oldState, { saveState } from './store/Store';
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, oldState, applyMiddleware(logger));
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
+
 const app = (
   <Provider store={store}>
-    <App/>
+    <App />
   </Provider>
 );
 
