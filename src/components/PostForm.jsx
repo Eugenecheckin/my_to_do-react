@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Header } from '../styles/Component.style';
-
 import addTodoAction, { setAllChecked } from '../store/Action';
+import { Header } from '../styles/Component.style';
 
 class Postform extends React.Component {
   constructor(props) {

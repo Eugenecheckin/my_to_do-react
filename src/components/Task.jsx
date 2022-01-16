@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { StyleTask, StyleTaskContainer } from '../styles/Task.style';
 import { SET_CHECKED, EDIT_ITEM, DEL_CHECKED } from '../store/Types';
+import { StyleTask, StyleTaskContainer } from '../styles/Task.style';
 
 function Task({ task }) {
   const selector = useSelector(state => state.tasks.find(element => {
@@ -84,7 +84,10 @@ function Task({ task }) {
         >
           {selector.title}
         </label>
-        <div className="remove-todo-conteiner" onClick={buttonClickEvHandler}>
+        <div
+          className="remove-todo-conteiner"
+          onClick={buttonClickEvHandler}
+        >
           <label className="label-del">×</label>
         </div>
       </StyleTask>

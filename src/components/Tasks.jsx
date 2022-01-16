@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 
 import { DEL_ALLCHECKED } from '../store/Types';
 import Task from './Task';
-import { StyleButton, ButtonFlexContainer, FootContainer } from '../styles/Task.style';
+import { FootContainer, ButtonFlexContainer, StyleButton } from '../styles/Tasks.style';
 
 function Tasks({ posts }) {
   const [count, setCount] = useState('all');
