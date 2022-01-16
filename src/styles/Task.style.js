@@ -12,11 +12,13 @@ export const StyleTask = styled.div`
   label {
     overflow-wrap: anywhere;
     padding: 15px 15px 15px 15px;    
+    transition: color 0.4s;
   }  
   input {    
     margin-right: 5px;            
   }
-  .check-todo-conteiner {    
+  .check-todo-conteiner { 
+    position: relative;
     width: 40px;
     height: 40px;  
     padding : 0;
@@ -42,7 +44,7 @@ export const StyleTask = styled.div`
     height: 40px;
     background-size: 40px 40px;
     position: absolute;
-    top : 10px;
+    top : 0;
     left: 0;
     background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checked.svg)` : `url(../unChecked.svg)`};    
@@ -132,6 +134,8 @@ export const StyleButton = styled.div`
     border: none;
     &:hover{
       text-decoration: underline;
+      cursor: pointer;
+      font-weight: 300px;
     } 
   }
   .flexDivClear {
@@ -139,11 +143,19 @@ export const StyleButton = styled.div`
     height: 20px;
   }
   .activeButton {
-    border-color: rgba(175, 47, 47, 0.2);    
+    font-weight: 300px;
+    font-size: 14px;
+    border-color: rgba(175, 47, 47, 0.2);
+    &:hover {
+      cursor: pointer;
+    }    
   }
   .false {
+    font-weight: 300px;
+    font-size: 14px;
     &:hover{
       border-color: #F7EAEA;
+      cursor: pointer;
     }
   }
 `;
@@ -155,6 +167,8 @@ export const ButtonFlexContainer = styled.div`
   align-items: center;
   .itemLeft {
     font-size: 14px;
+    font-weight: 300px;
+    
   }
   @media screen and (max-width: 320px) {
       flex-direction: column;
