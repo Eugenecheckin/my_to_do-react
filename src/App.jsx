@@ -3,10 +3,14 @@ import React from 'react';
 import Postform from './components/PostForm';
 import Tasks from './components/Tasks';
 
-import { Wrapper } from './styles/Component.style';
+import { LogoWraper, Wrapper } from './styles/Component.style';
 
 function App() {
   return (
+    <>
+    <LogoWraper>
+      todos
+    </LogoWraper>
     <Wrapper>
       <div className="app">
         <div className="input-task">
@@ -17,6 +21,7 @@ function App() {
         </div>
       </div>
     </Wrapper>
+    </>
   );
 }
 

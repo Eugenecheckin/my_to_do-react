@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { LogoWraper, Header } from '../styles/Component.style';
+import { Header } from '../styles/Component.style';
 
 import addTodoAction, { setAllChecked } from '../store/Action';
 
@@ -79,9 +79,6 @@ class Postform extends React.Component {
     const { title } = this.state;
     return (
       <div>
-        <LogoWraper>
-          todos
-        </LogoWraper>
         <Header checkAll={this.checkAll()} hasTask={this.hasTask()}>
           <input
             className="checkAll"

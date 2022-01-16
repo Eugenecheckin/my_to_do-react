@@ -135,10 +135,15 @@ export const StyleButton = styled.div`
     &:hover{
       text-decoration: underline;
     } 
-  }
+  }  
   .activeButton {
-    border-color: rgba(175, 47, 47, 0.2);
-}
+    border-color: rgba(175, 47, 47, 0.2);    
+  }
+  .false {
+    &:hover{
+      border-color: #F7EAEA;
+    }
+  }
 `;
 
 export const ButtonFlexContainer = styled.div`

@@ -30,9 +30,12 @@ export const Wrapper = styled.div`
     font-weight: 300;
     color: #e6e6e6;
   }
+
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
 `;
 
-export const LogoWraper = styled.div`    
+export const LogoWraper = styled.div`   
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
     top: 0px;
     width: 100%;
     font-size: 100px;
