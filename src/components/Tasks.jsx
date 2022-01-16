@@ -25,6 +25,7 @@ function Tasks({ posts }) {
       return true;
     }
   }).length;
+  const isCompletedExist = !!posts.filter((item) => item.checked).length;
 
   return (
     <>
@@ -52,7 +53,7 @@ function Tasks({ posts }) {
       {!!posts.length && (
         <FootContainer>
           <ButtonFlexContainer>
-            <label className='itemLeft'>
+            <label className="itemLeft">
               {` ${itemLeft()}` }
               {' '}
               items left
@@ -87,13 +88,18 @@ function Tasks({ posts }) {
               </StyleButton>
             </ButtonFlexContainer>
             <StyleButton>
-              <button
-                className="clearButton"
-                type="button"
-                onClick={buttonClickEvHandler}
-              >
-                Clear completed
-              </button>
+              {isCompletedExist
+                ? (
+                  <StyleButton>
+                    <button
+                      className="clearButton"
+                      type="button"
+                      onClick={buttonClickEvHandler}
+                    >
+                      Clear completed
+                    </button>
+                  </StyleButton>
+                ) : <div className="flexDivClear" />}
             </StyleButton>
           </ButtonFlexContainer>
         </FootContainer>

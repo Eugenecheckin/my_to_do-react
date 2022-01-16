@@ -31,8 +31,7 @@ export const StyleTask = styled.div`
   }
   .text-todo {
     font-size: 24px;
-    width: 100%;
-    padding: 0;
+    width: 100%;    
     padding-left: 20px;
     text-decoration: ${props => props.checkEdit? `line-through` : `none`};
     opacity: ${props => props.checkEdit? `.3` : `1`};;
@@ -94,8 +93,7 @@ export const StyleEdit = styled.div`
   border: 0;
   color: inherit;
   padding: 6px;
-  border: 1px solid #999;
-  //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #999;  
   box-sizing: border-box;
   
 `;
@@ -135,7 +133,11 @@ export const StyleButton = styled.div`
     &:hover{
       text-decoration: underline;
     } 
-  }  
+  }
+  .flexDivClear {
+    width: 117px;
+    height: 20px;
+  }
   .activeButton {
     border-color: rgba(175, 47, 47, 0.2);    
   }
@@ -174,4 +176,5 @@ export const FootContainer = styled.div`
       overflow: hidden;
       box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgb(0 0 0 / 20%), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgb(0 0 0 / 20%);
     }
+    
 `;
