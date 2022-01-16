@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StyleTask, StyleEdit, StyleTaskContainer } from '../styles/Task.style';
+
+import { StyleTask, StyleTaskContainer } from '../styles/Task.style';
+import { SET_CHECKED, EDIT_ITEM, DEL_CHECKED } from '../store/Types';
 
 function Task({ task }) {
   const selector = useSelector(state => state.tasks.find(element => {
@@ -14,7 +16,7 @@ function Task({ task }) {
 
   const checkBoxClickEvHandler = () => {
     dispatch({
-      type: 'set-checked',
+      type: SET_CHECKED,
       payload: {
         id: selector.id,
         checked: selector.checked,
@@ -23,7 +25,7 @@ function Task({ task }) {
   };
   const buttonClickEvHandler = () => {
     dispatch({
-      type: 'del-checked',
+      type: DEL_CHECKED,
       payload: {
         id: selector.id,
       },
@@ -48,7 +50,7 @@ function Task({ task }) {
         checked: false,
       };
       dispatch({
-        type: 'edit-item',
+        type: EDIT_ITEM,
         payload,
       });
       setEdit(prev => ({ ...prev, title: '', done: false }));

@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
+
+import { DEL_ALLCHECKED } from '../store/Types';
 import Task from './Task';
 import { StyleButton, ButtonFlexContainer, FootContainer } from '../styles/Task.style';
 
@@ -14,7 +16,7 @@ function Tasks({ posts }) {
       return;
     }
     dispatch({
-      type: 'del-Allchecked',
+      type: DEL_ALLCHECKED,
       payload: {
         id: selector.map(item => item.id),
       },
