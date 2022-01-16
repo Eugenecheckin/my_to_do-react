@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 export const StyleTask = styled.div`  
@@ -22,8 +21,7 @@ export const StyleTask = styled.div`
     width: 40px;
     height: 40px;  
     padding : 0;
-  }  
-
+  }
   .check-todo {
     position: relative;
     z-index: 99;
@@ -48,8 +46,7 @@ export const StyleTask = styled.div`
     left: 0;
     background-repeat: no-repeat;
     background-image: ${props => props.checkEdit? `url(../checked.svg)` : `url(../unChecked.svg)`};    
-  }
-  
+  }  
   .label-del {
     top: 8px;
     padding: 0;
@@ -65,20 +62,19 @@ export const StyleTask = styled.div`
       color: #af5b5e;
     }
   }
-
   .remove-todo-conteiner {
     width: 50px;
     height: 60px;   
     visibility: hidden;
-
   }
   .remove-todo {
     position: absolute;
     visibility: hidden;
-  }
+    }
   &:hover > .remove-todo-conteiner {
     visibility: visible;
-    }
+  }
+  
 `;
 
 export const StyleEdit = styled.div`
@@ -97,7 +93,7 @@ export const StyleEdit = styled.div`
   padding: 6px;
   border: 1px solid #999;  
   box-sizing: border-box;
-  
+
 `;
 
 export const StyleTaskContainer = styled.div`

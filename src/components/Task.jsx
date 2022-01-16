@@ -68,11 +68,11 @@ function Task({ task }) {
             checked={selector.checked}
             onChange={checkBoxClickEvHandler}
           />
-          <label
+          {!edit.done&&(<label
               className='labelCheck'
               htmlFor={`${task.id}`}
           >
-          </label>
+          </label>)}
         </div>
         <label
           className="text-todo"

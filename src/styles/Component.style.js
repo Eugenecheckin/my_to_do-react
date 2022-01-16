@@ -38,13 +38,13 @@ export const Wrapper = styled.div`
 `;
 
 export const LogoWraper = styled.div`   
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-    top: 0px;
-    width: 100%;
-    font-size: 100px;
-    font-weight: 100;
-    text-align: center;
-    color: rgba(175, 47, 47, 0.15);    
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  top: 0px;
+  width: 100%;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);    
 `;
 export const Header = styled.div`  
   background-color:#fff;
@@ -64,9 +64,7 @@ export const Header = styled.div`
     font-family: inherit;
     font-weight: inherit;
     line-height: 1.4em;
-    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);  
-    //border-bottom: ${props => (props.checkAll ? '1px solid #ededed' : 'none')};
-    //box-shadow: ${props => (props.checkAll ? 'inset 0 -2px 1px rgb(0 0 0 / 3%)' : 'none')};
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
   }
   .checkAll {
     position: absolute;
