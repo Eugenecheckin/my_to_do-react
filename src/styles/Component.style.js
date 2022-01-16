@@ -30,6 +30,9 @@ export const Wrapper = styled.div`
     font-weight: 300;
     color: #e6e6e6;
   }
+  .todo-tasks{
+    border-top: 1px solid #ededed;
+  }
 
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
 `;
@@ -79,6 +82,8 @@ export const Header = styled.div`
     transform: rotate(90deg);   
     opacity: ${props => (props.checkAll ? '1' : '.3')};     
     visibility: ${props => (props.hasTask ? 'visible' : 'hidden')};
+    user-select: none;
+    -webkit-user-select: none;
   }
 
 `;
