@@ -60,7 +60,7 @@ function Task({ task }) {
   return (
     <StyleTaskContainer>
       <StyleTask checkEdit={selector.checked} delId={`${selector.id}-del`}>
-        <div className='check-todo-conteiner'>
+        <div className="check-todo-conteiner">
           <input
             id={`${task.id}-del`}
             className="check-todo"
@@ -68,11 +68,12 @@ function Task({ task }) {
             checked={selector.checked}
             onChange={checkBoxClickEvHandler}
           />
-          {!edit.done&&(<label
-              className='labelCheck'
-              htmlFor={`${task.id}`}
-          >
-          </label>)}
+          {!edit.done && (
+          <label
+            className="labelCheck"
+            htmlFor={`${task.id}`}
+          />
+          )}
         </div>
         <label
           className="text-todo"
@@ -81,8 +82,8 @@ function Task({ task }) {
         >
           {selector.title}
         </label>
-        <div className='remove-todo-conteiner' onClick={buttonClickEvHandler}>
-          <label className='label-del'>×</label>
+        <div className="remove-todo-conteiner" onClick={buttonClickEvHandler}>
+          <label className="label-del">×</label>
         </div>
       </StyleTask>
 

@@ -89,7 +89,8 @@ class Postform extends React.Component {
           />
           <label
             className="labelAll"
-            htmlFor="check-all">
+            htmlFor="check-all"
+          >
             ❯
           </label>
           <input

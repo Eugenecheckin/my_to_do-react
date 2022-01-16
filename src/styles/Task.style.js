@@ -33,8 +33,8 @@ export const StyleTask = styled.div`
     font-size: 24px;
     width: 100%;    
     padding-left: 20px;
-    text-decoration: ${props => props.checkEdit? `line-through` : `none`};
-    opacity: ${props => props.checkEdit? `.3` : `1`};;
+    text-decoration: ${props => (props.checkEdit ? 'line-through' : 'none')};
+    opacity: ${props => (props.checkEdit ? '.3' : '1')};;
   }   
   .labelCheck {
     padding: 0;
@@ -45,7 +45,7 @@ export const StyleTask = styled.div`
     top : 0;
     left: 0;
     background-repeat: no-repeat;
-    background-image: ${props => props.checkEdit? `url(../checked.svg)` : `url(../unChecked.svg)`};    
+    background-image: ${props => (props.checkEdit ? 'url(../checked.svg)' : 'url(../unChecked.svg)')};    
   }  
   .label-del {
     top: 8px;

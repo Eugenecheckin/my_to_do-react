@@ -29,12 +29,10 @@ const rootReducer = (state = initialState, action) => {
       ],
     };
     case 'set-allChecked': return {
-      tasks: [...state.tasks.map((item, i, arr) => {
-        return {
-          ...item, 
-          checked: !action.payload,
-        };
-      }),
+      tasks: [...state.tasks.map((item, i, arr) => ({
+        ...item,
+        checked: !action.payload,
+      })),
       ],
     };
     case 'del-checked': return {
